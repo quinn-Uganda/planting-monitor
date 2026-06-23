@@ -13,3 +13,7 @@ date,district,status,reason,rains_active,obs_last10_mm,fc_next7_mm,fc_rain_prob_
 2026-06-23,Nwoya,AMBER,"marginal (16.0mm/7d, clim risk 17%)",no,15.4,16.0,55,6,0.03,17,15 Oct,2.635,31.989
 2026-06-23,Amuru,AMBER,"marginal (18.1mm/7d, clim risk 13%)",yes,32.5,18.1,63,1,0.0,13,15 Oct,2.989,32.016
 2026-06-23,Lamwo,GREEN,"39.1mm forecast next 7d, no dry spell, low seasonal risk",no,8.9,39.1,71,1,0.0,9,15 Oct,3.501,32.736
+2026-06-23,Amolatar,GREEN,"20.5mm forecast next 7d, no dry spell, low seasonal risk",no,7.3,20.5,42,5,0.25,6,01 Oct,1.702,32.816
+2026-06-23,Kalaki,GREEN,"37.9mm forecast next 7d, no dry spell, low seasonal risk",no,11.8,37.9,52,2,0.03,0,24 Sep,1.896,33.4
+2026-06-23,Amuria,GREEN,"37.9mm forecast next 7d, no dry spell, low seasonal risk",no,11.8,37.9,52,2,0.03,0,24 Sep,2.038,33.398
+2026-06-23,Kaberamaido,AMBER,"marginal (15.9mm/7d, clim risk 0%)",no,8.3,15.9,40,5,0.2,0,01 Oct,1.747,33.13
