@@ -1,0 +1,2 @@
+# Engine uses only the Python standard library (urllib, json, csv).
+# No third-party packages required.
