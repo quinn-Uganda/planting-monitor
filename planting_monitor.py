@@ -59,14 +59,45 @@ def nasa_power_recent(lat, lon, end_date, ndays=14):
     except Exception:
         return None, 0
 
+def enso_context():
+    """Current ENSO state (NOAA ONI) + plain-language seasonal tilt for East Africa.
+    ENSO is the dominant basin-scale driver here; IOD is co-important but lacks a
+    reliable key-free live feed, so we point to ICPAC for the authoritative outlook."""
+    try:
+        import urllib.request as u
+        with u.urlopen("https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt", timeout=20) as r:
+            lines = r.read().decode().strip().splitlines()
+        seas, yr, _tot, anom = lines[-1].split()
+        oni = float(anom)
+        if oni >= 0.5:
+            state = "El Niño"; tilt = ("tends to ENHANCE the Aug–Dec rains in this region — "
+                                       "lean toward a normal-to-wet remaining season")
+        elif oni <= -0.5:
+            state = "La Niña"; tilt = ("tends to SUPPRESS the Aug–Dec rains — watch for a drier "
+                                       "second season; tighten late-batch criteria")
+        else:
+            state = "Neutral"; tilt = ("no strong basin-scale push — rely on climatology + the "
+                                       "short-range forecast")
+        return {"oni": oni, "season": f"{seas} {yr}", "state": state,
+                "text": f"ENSO {state} (ONI {oni:+.2f}, {seas} {yr}) — {tilt}. "
+                        f"Confirm with ICPAC's seasonal outlook (covers the IOD too)."}
+    except Exception:
+        return {"oni": None, "state": "unknown",
+                "text": "ENSO state unavailable today — check ICPAC's seasonal outlook for context."}
+
 DASH_CSS = {"GREEN": ("#1D9E75", "#04342C"), "AMBER": ("#EF9F27", "#412402"), "RED": ("#E24B4A", "#fff")}
 DASH_LABEL = {"GREEN": "GO", "AMBER": "WATCH", "RED": "HOLD"}
 CONF_CSS = {"HIGH": "#1D9E75", "MED": "#BA7517", "LOW": "#E24B4A"}
 
-def write_dashboard(rows, today, path):
+def write_dashboard(rows, today, path, seasonal=None):
     pri = {"RED": 0, "AMBER": 1, "GREEN": 2}
     rows = sorted(rows, key=lambda r: (pri[r["status"]], -r["fc_next7_mm"]))
     counts = {s: sum(1 for r in rows if r["status"] == s) for s in ("GREEN", "AMBER", "RED")}
+    banner = ""
+    if seasonal and seasonal.get("text"):
+        banner = (f'<div style="background:#eef3f8;border:1px solid #cfe0f0;border-radius:8px;'
+                  f'padding:9px 12px;margin:0 0 12px;font-size:13px;color:#234">'
+                  f'<b>Seasonal context:</b> {seasonal["text"]}</div>')
     cards = []
     for r in rows:
         bg, fg = DASH_CSS[r["status"]]
@@ -78,7 +109,7 @@ def write_dashboard(rows, today, path):
 <span style="background:{bg};color:{fg};font-weight:600;font-size:13px;padding:3px 10px;border-radius:6px">{DASH_LABEL[r['status']]}</span></span></div>
 <div style="font-size:13px;color:#444;margin:6px 0 8px">{r['reason']}</div>
 <div style="font-size:12px;color:#666;display:flex;flex-wrap:wrap;gap:10px">
-<span>Forecast next 7d: <b>{r['fc_next7_mm']} mm</b></span>
+<span>Forecast next 7d: <b>{r['fc_next7_mm']} mm</b> <span style="color:#999">(±{r['fc_spread_mm']} across {r['sample_points']} pts)</span></span>
 <span>Rain prob: <b>{r['fc_rain_prob_7d_%']}%</b></span>
 <span>Forecast dry-run: <b>{r['fc_dryspell_days']} d</b></span>
 <span>Satellite last 10d: <b>{r['sat_obs_last10_mm']} mm</b></span>
@@ -89,7 +120,8 @@ def write_dashboard(rows, today, path):
 <title>Planting monitor - Uganda</title></head>
 <body style="font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:14px;color:#222;background:#f6f6f4">
 <h1 style="font-size:20px;margin:0 0 2px">Planting go / no-go - Uganda nurseries</h1>
-<div style="font-size:13px;color:#666;margin-bottom:10px">Updated {today} (EAT) · 4-model forecast (ECMWF/GFS/ICON/UKMO) + ICON ensemble + NASA POWER satellite, on rainfall climatology</div>
+<div style="font-size:13px;color:#666;margin-bottom:10px">Updated {today} (EAT) · 4-model forecast (ECMWF/GFS/ICON/UKMO, multi-point) + ICON ensemble + NASA POWER satellite + ENSO, on rainfall climatology</div>
+{banner}
 <div style="display:flex;gap:8px;margin-bottom:6px">
 <div style="flex:1;text-align:center;background:#1D9E75;color:#fff;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['GREEN']}</div><div style="font-size:12px">GO</div></div>
 <div style="flex:1;text-align:center;background:#EF9F27;color:#412402;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['AMBER']}</div><div style="font-size:12px">WATCH</div></div>
@@ -109,19 +141,29 @@ def main():
     today = datetime.date.today()
     today_s = today.isoformat()
 
+    seasonal = enso_context()
+
+    # centroids (used for multi-model, ensemble, satellite)
     lats = ",".join(str(D[d]["clat"]) for d in order)
     lons = ",".join(str(D[d]["clon"]) for d in order)
+    # all sample points (used for primary ECMWF -> spatial spread per district)
+    pt_lat, pt_lon, span = [], [], {}
+    for d in order:
+        pts = D[d].get("pts") or [[D[d]["clat"], D[d]["clon"]]]
+        span[d] = (len(pt_lat), len(pt_lat) + len(pts))
+        for la, lo in pts:
+            pt_lat.append(str(la)); pt_lon.append(str(lo))
 
-    # primary: ECMWF 14-day (precip + probability), with 10 past days
+    # primary: ECMWF 14-day (precip + probability), with 10 past days, at every sample point
     fc = get("https://api.open-meteo.com/v1/forecast", {
-        "latitude": lats, "longitude": lons,
+        "latitude": ",".join(pt_lat), "longitude": ",".join(pt_lon),
         "daily": "precipitation_sum,precipitation_probability_max",
         "models": "ecmwf_ifs025", "forecast_days": 14, "past_days": 10, "timezone": TZ})
-    # agreement: 4 models, 7-day precip
+    # agreement: 4 models, 7-day precip (centroid)
     mm = get("https://api.open-meteo.com/v1/forecast", {
         "latitude": lats, "longitude": lons, "daily": "precipitation_sum",
         "models": ",".join(MODELS), "forecast_days": 7, "timezone": TZ})
-    # ensemble: ICON 40 members, 7-day
+    # ensemble: ICON 40 members, 7-day (centroid)
     ens = get("https://ensemble-api.open-meteo.com/v1/ensemble", {
         "latitude": lats, "longitude": lons, "daily": "precipitation_sum",
         "models": "icon_seamless", "forecast_days": 7, "timezone": TZ})
@@ -131,15 +173,21 @@ def main():
 
     rows = []
     for i, d in enumerate(order):
-        cd = fc[i]["daily"]
-        t = cd["time"]; psum = cd["precipitation_sum"]; pprob = cd["precipitation_probability_max"]
-        ti = t.index(today_s) if today_s in t else 10
-        next7  = [x for x in psum[ti:ti+7] if x is not None]
-        next14 = psum[ti:ti+14]
-        prob7  = [x for x in pprob[ti:ti+7] if x is not None]
-        next7_mm = round(sum(next7), 1)
-        fc_dry   = max_dry_run(next14)
+        a, b = span[d]                       # this district's sample-point range in fc
+        c0 = fc[a]["daily"]                  # centroid point (first)
+        t = c0["time"]; ti = t.index(today_s) if today_s in t else 10
+        prob7 = [x for x in c0["precipitation_probability_max"][ti:ti+7] if x is not None]
+        fc_dry = max_dry_run(c0["precipitation_sum"][ti:ti+14])
         prob_mean = round(sum(prob7)/len(prob7)) if prob7 else None
+        # next-7-day rain at every sample point -> district mean + spatial spread
+        pt_next7 = []
+        for j in range(a, b):
+            ps = fc[j]["daily"]["precipitation_sum"]
+            vals = [x for x in ps[ti:ti+7] if x is not None]
+            if vals: pt_next7.append(sum(vals))
+        next7_mm = round(sum(pt_next7)/len(pt_next7), 1) if pt_next7 else 0.0
+        spread_mm = round(max(pt_next7) - min(pt_next7), 1) if len(pt_next7) > 1 else 0.0
+        n_pts = len(pt_next7)
 
         # ICON ensemble dry-spell probability
         ed = ens[i]["daily"]
@@ -187,22 +235,25 @@ def main():
         # ---- confidence modifier: a GO the models don't back becomes WATCH ----
         if status == "GREEN" and confidence == "LOW":
             status = "AMBER"; why = f"models split on the forecast ({models_agree}); treat as watch"
+        if spread_mm >= 20 and n_pts > 1:
+            why += f" · rain varies ~{spread_mm}mm across the district — check local sites"
 
         rows.append({
             "date": today_s, "district": d, "status": status, "confidence": confidence,
             "models_agree": models_agree, "reason": why,
             "rains_active": "yes" if rains_active else "no",
             "sat_obs_last10_mm": sat_mm if sat_mm is not None else "n/a",
-            "fc_next7_mm": next7_mm, "fc_rain_prob_7d_%": prob_mean,
-            "fc_dryspell_days": fc_dry, "ens_dryspell_prob": ens_dry_prob,
-            "clim_risk_thisweek_%": clim_now, "plant_by": clim["wk_label"][pbw],
-            "lat": D[d]["clat"], "lon": D[d]["clon"],
+            "fc_next7_mm": next7_mm, "fc_spread_mm": spread_mm, "sample_points": n_pts,
+            "fc_rain_prob_7d_%": prob_mean, "fc_dryspell_days": fc_dry,
+            "ens_dryspell_prob": ens_dry_prob, "clim_risk_thisweek_%": clim_now,
+            "plant_by": clim["wk_label"][pbw], "lat": D[d]["clat"], "lon": D[d]["clon"],
         })
 
     cols = list(rows[0].keys())
     with open(os.path.join(OUTDIR, "status_today.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(rows)
-    json.dump({"generated": today_s, "rows": rows}, open(os.path.join(OUTDIR, "status.json"), "w"), indent=1)
+    json.dump({"generated": today_s, "seasonal": seasonal, "rows": rows},
+              open(os.path.join(OUTDIR, "status.json"), "w"), indent=1)
     hist = os.path.join(OUTDIR, "history.csv")
     prior = [r for r in csv.DictReader(open(hist))] if os.path.exists(hist) else []
     prior = [r for r in prior if r.get("date") != today_s]
@@ -213,7 +264,7 @@ def main():
             w.writerow({c: r.get(c, "") for c in cols})
         w.writerows(rows)
 
-    write_dashboard(rows, today_s, os.path.join(OUTDIR, "dashboard.html"))
+    write_dashboard(rows, today_s, os.path.join(OUTDIR, "dashboard.html"), seasonal)
     counts = {s: sum(1 for r in rows if r["status"] == s) for s in ("GREEN", "AMBER", "RED")}
     print(f"{today_s}  GREEN={counts['GREEN']} AMBER={counts['AMBER']} RED={counts['RED']}")
     for r in rows:
