@@ -35,3 +35,4 @@ date,district,status,confidence,models_agree,reason,rains_active,sat_obs_last10_
 2026-06-24,Kalaki,AMBER,HIGH,1/4 models wet,"thin rain ahead (14.6mm/7d, ens dry-risk 53%)",no,17.2,14.6,36.9,6.4,4,48,3,0.53,0,24 Sep,1.896,33.4
 2026-06-24,Amuria,AMBER,LOW,1/4 models wet,"thin rain ahead (17.3mm/7d, ens dry-risk 53%)",no,17.2,17.3,37.8,0.0,4,50,5,0.53,0,24 Sep,2.038,33.398
 2026-06-24,Kaberamaido,AMBER,HIGH,1/4 models wet,"thin rain ahead (11.4mm/7d, ens dry-risk 82%)",no,19.7,11.4,28.9,2.8,4,38,3,0.82,0,01 Oct,1.747,33.13
+2026-06-24,Kagadi,AMBER,HIGH,0/4 models wet,"thin rain ahead (4.4mm/7d, ens dry-risk 60%)",yes,20.3,4.4,17.4,1.0,3,32,5,0.6,21,22 Oct,1.019,30.841

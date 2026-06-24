@@ -384,6 +384,27 @@
    "plant_by": "01 Oct",
    "lat": 1.747,
    "lon": 33.13
+  },
+  {
+   "date": "2026-06-24",
+   "district": "Kagadi",
+   "status": "AMBER",
+   "confidence": "HIGH",
+   "models_agree": "0/4 models wet",
+   "reason": "thin rain ahead (4.4mm/7d, ens dry-risk 60%)",
+   "rains_active": "yes",
+   "sat_obs_last10_mm": 20.3,
+   "fc_next7_mm": 4.4,
+   "fc_week2_mm": 17.4,
+   "fc_spread_mm": 1.0,
+   "sample_points": 3,
+   "fc_rain_prob_7d_%": 32,
+   "fc_dryspell_days": 5,
+   "ens_dryspell_prob": 0.6,
+   "clim_risk_thisweek_%": 21,
+   "plant_by": "22 Oct",
+   "lat": 1.019,
+   "lon": 30.841
   }
  ]
 }
