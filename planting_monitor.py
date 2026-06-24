@@ -96,6 +96,30 @@ def cell_color(v):
     if v <= 25: return ("#BA7517", "#fff")
     return ("#E24B4A", "#fff")
 
+def forecast_table_html(rows):
+    """Per-district 2-week forecast rainfall + rain probability + climatological risk."""
+    pri = {"RED": 0, "AMBER": 1, "GREEN": 2}
+    rs = sorted(rows, key=lambda r: (pri[r["status"]], -r["fc_next7_mm"]))
+    dot = {"GREEN": "#1D9E75", "AMBER": "#EF9F27", "RED": "#E24B4A"}
+    body = ""
+    for r in rs:
+        bg, fg = cell_color(r["clim_risk_thisweek_%"])
+        prob = r["fc_rain_prob_7d_%"]; prob = f"{prob}%" if prob is not None else "–"
+        body += (f'<tr>'
+                 f'<td style="padding:5px 8px;border-bottom:1px solid #eee;white-space:nowrap">'
+                 f'<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:{dot[r["status"]]};margin-right:6px"></span>{r["district"]}</td>'
+                 f'<td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;font-weight:500">{r["fc_next7_mm"]} mm</td>'
+                 f'<td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;color:#666">{r["fc_week2_mm"]} mm</td>'
+                 f'<td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right">{prob}</td>'
+                 f'<td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:center">'
+                 f'<span style="background:{bg};color:{fg};padding:1px 7px;border-radius:4px;font-size:12px">{r["clim_risk_thisweek_%"]}%</span></td></tr>')
+    return f"""<h2 style="font-size:16px;margin:22px 0 4px">Two-week rainfall outlook</h2>
+<div style="font-size:12px;color:#666;margin-bottom:8px">Forecast rainfall per district, updates daily. <b>This week</b> = next 7 days, <b>next week</b> = days 8–14 (lower confidence). Rain prob = chance of rain in the next 7 days. Clim risk = this week's historical dry-spell risk.</div>
+<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:13px;min-width:430px">
+<thead><tr style="color:#666;font-size:12px">
+<th style="text-align:left;padding:5px 8px">District</th><th style="text-align:right;padding:5px 8px">This week</th><th style="text-align:right;padding:5px 8px">Next week</th><th style="text-align:right;padding:5px 8px">Rain prob</th><th style="text-align:center;padding:5px 8px">Clim risk</th></tr></thead>
+<tbody>{body}</tbody></table></div>"""
+
 def weekly_calendar_html(clim, cur_wk):
     """Self-contained HTML table: per-district weekly dry-spell-risk climatology."""
     W0, W1 = 9, 47                       # weeks 10..47 -> early Mar .. late Nov
@@ -162,6 +186,7 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
 <span>Satellite last 10d: <b>{r['sat_obs_last10_mm']} mm</b></span>
 <span>Rains active: <b>{r['rains_active']}</b></span>
 <span>Plant by: <b>{r['plant_by']}</b></span></div></div>""")
+    forecast_tbl = forecast_table_html(rows)
     calendar = weekly_calendar_html(clim, cur_wk) if clim else ""
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -175,6 +200,7 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
 <div style="flex:1;text-align:center;background:#EF9F27;color:#412402;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['AMBER']}</div><div style="font-size:12px">WATCH</div></div>
 <div style="flex:1;text-align:center;background:#E24B4A;color:#fff;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['RED']}</div><div style="font-size:12px">HOLD</div></div></div>
 {''.join(cards)}
+{forecast_tbl}
 {calendar}
 <div style="font-size:11px;color:#999;margin-top:14px;line-height:1.5">GO = plant now. WATCH = hold a few days / confirm local rains. HOLD = do not plant (dry spell ahead or season window closed).
 Confidence = how many of the 4 models agree with the lead forecast. Satellite (NASA POWER) has a ~3-day lag, so it confirms rains have <i>started</i>, not today's sky.
@@ -228,13 +254,16 @@ def main():
         prob7 = [x for x in c0["precipitation_probability_max"][ti:ti+7] if x is not None]
         fc_dry = max_dry_run(c0["precipitation_sum"][ti:ti+14])
         prob_mean = round(sum(prob7)/len(prob7)) if prob7 else None
-        # next-7-day rain at every sample point -> district mean + spatial spread
-        pt_next7 = []
+        # rain at every sample point -> district means (week 1 = next 7d, week 2 = days 8-14)
+        pt_next7, pt_week2 = [], []
         for j in range(a, b):
             ps = fc[j]["daily"]["precipitation_sum"]
-            vals = [x for x in ps[ti:ti+7] if x is not None]
-            if vals: pt_next7.append(sum(vals))
+            v1 = [x for x in ps[ti:ti+7]   if x is not None]
+            v2 = [x for x in ps[ti+7:ti+14] if x is not None]
+            if v1: pt_next7.append(sum(v1))
+            if v2: pt_week2.append(sum(v2))
         next7_mm = round(sum(pt_next7)/len(pt_next7), 1) if pt_next7 else 0.0
+        week2_mm = round(sum(pt_week2)/len(pt_week2), 1) if pt_week2 else 0.0
         spread_mm = round(max(pt_next7) - min(pt_next7), 1) if len(pt_next7) > 1 else 0.0
         n_pts = len(pt_next7)
 
@@ -292,7 +321,8 @@ def main():
             "models_agree": models_agree, "reason": why,
             "rains_active": "yes" if rains_active else "no",
             "sat_obs_last10_mm": sat_mm if sat_mm is not None else "n/a",
-            "fc_next7_mm": next7_mm, "fc_spread_mm": spread_mm, "sample_points": n_pts,
+            "fc_next7_mm": next7_mm, "fc_week2_mm": week2_mm, "fc_spread_mm": spread_mm,
+            "sample_points": n_pts,
             "fc_rain_prob_7d_%": prob_mean, "fc_dryspell_days": fc_dry,
             "ens_dryspell_prob": ens_dry_prob, "clim_risk_thisweek_%": clim_now,
             "plant_by": clim["wk_label"][pbw], "lat": D[d]["clat"], "lon": D[d]["clon"],
