@@ -12,7 +12,7 @@ season cessation, week-by-week dry-spell risk) with live data:
 Outputs (in OUTDIR): status_today.csv, status.json, history.csv, dashboard.html
 Run daily. No API key required.
 """
-import json, csv, os, urllib.request, urllib.parse, datetime
+import json, csv, os, time, urllib.request, urllib.parse, datetime
 
 OUTDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "planting_monitor_out")
 CLIM_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "clim_baseline.json")
@@ -32,9 +32,18 @@ MODELS           = ["ecmwf_ifs025", "gfs_seamless", "icon_seamless", "ukmo_seaml
 PANEL = ["ecmwf_ifs025", "ecmwf_aifs025_single", "gfs_seamless", "icon_seamless",
          "ukmo_seamless", "meteofrance_seamless", "jma_seamless", "gem_seamless", "knmi_seamless"]
 
-def fetch(url, timeout=45):
-    with urllib.request.urlopen(url, timeout=timeout) as r:
-        return json.load(r)
+def fetch(url, timeout=45, retries=3):
+    """GET + parse JSON, retrying transient network/SSL failures (cloud runners flake)."""
+    last = None
+    for i in range(retries):
+        try:
+            with urllib.request.urlopen(url, timeout=timeout) as r:
+                return json.load(r)
+        except Exception as e:
+            last = e
+            if i < retries - 1:
+                time.sleep(3 * (i + 1))
+    raise last
 
 def get(base, params, timeout=45):
     return fetch(base + "?" + urllib.parse.urlencode(params), timeout)

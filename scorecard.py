@@ -15,7 +15,7 @@ Metrics per model (over all verifiable district-day forecasts):
 
 Meaningful once a few weeks of data accrue (POWER lags ~3 days). Run daily.
 """
-import csv, os, json, datetime, urllib.request, urllib.parse
+import csv, os, json, time, datetime, urllib.request, urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "planting_monitor_out")
@@ -28,8 +28,14 @@ def power_daily(lat, lon, start, end):
     url = "https://power.larc.nasa.gov/api/temporal/daily/point?" + urllib.parse.urlencode(
         {"parameters": "PRECTOTCORR", "community": "AG", "longitude": lon, "latitude": lat,
          "start": start, "end": end, "format": "JSON"})
-    with urllib.request.urlopen(url, timeout=40) as r:
-        d = json.load(r)
+    d = None
+    for i in range(3):
+        try:
+            with urllib.request.urlopen(url, timeout=40) as r:
+                d = json.load(r); break
+        except Exception:
+            if i < 2: time.sleep(3 * (i + 1))
+            else: raise
     out = {}
     for k, v in d["properties"]["parameter"]["PRECTOTCORR"].items():
         if v is not None and v > -900:
