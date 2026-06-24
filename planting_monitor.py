@@ -28,6 +28,9 @@ HOLD_ENS_DRYPROB = 0.40  # ensemble P(>=5-day dry run next 7d) >= this -> hold
 RAINS_ACTIVE_MM  = 20    # >= this much observed (satellite) recently -> rains established
 MODEL_WET_MM     = 15    # a model "votes wet" if its next-7-day total >= this
 MODELS           = ["ecmwf_ifs025", "gfs_seamless", "icon_seamless", "ukmo_seamless"]
+# full panel logged daily for the dependability scorecard (scorecard.py scores these)
+PANEL = ["ecmwf_ifs025", "ecmwf_aifs025_single", "gfs_seamless", "icon_seamless",
+         "ukmo_seamless", "meteofrance_seamless", "jma_seamless", "gem_seamless", "knmi_seamless"]
 
 def fetch(url, timeout=45):
     with urllib.request.urlopen(url, timeout=timeout) as r:
@@ -58,6 +61,38 @@ def nasa_power_recent(lat, lon, end_date, ndays=14):
         return round(sum(good[-10:]), 1), len(good)   # last 10 valid days
     except Exception:
         return None, 0
+
+def log_models(order, D, today_s):
+    """Append each model's next-7-day forecast per district to models_log.csv.
+    This is the raw material the scorecard verifies against actuals over time."""
+    lats = ",".join(str(D[d]["clat"]) for d in order)
+    lons = ",".join(str(D[d]["clon"]) for d in order)
+    pan = get("https://api.open-meteo.com/v1/forecast", {
+        "latitude": lats, "longitude": lons, "daily": "precipitation_sum",
+        "models": ",".join(PANEL), "forecast_days": 7, "timezone": TZ})
+    pan = pan if isinstance(pan, list) else [pan]
+    path = os.path.join(OUTDIR, "models_log.csv")
+    cols = ["issue_date", "target_date", "district", "model", "fc_mm"]
+    prior = []
+    if os.path.exists(path):
+        prior = [r for r in csv.DictReader(open(path)) if r.get("issue_date") != today_s]
+    out = []
+    for i, d in enumerate(order):
+        du = pan[i]["daily"]; t = du["time"]
+        for m in PANEL:
+            key = "precipitation_sum_" + m
+            if key not in du: continue
+            for k, date in enumerate(t):
+                if k == 0: continue                     # skip same-day analysis
+                v = du[key][k]
+                if v is None: continue
+                out.append({"issue_date": today_s, "target_date": date,
+                            "district": d, "model": m, "fc_mm": round(v, 2)})
+    with open(path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
+        w.writeheader()
+        for r in prior: w.writerow({c: r.get(c, "") for c in cols})
+        w.writerows(out)
 
 def enso_context():
     """Current ENSO state (NOAA ONI) + plain-language seasonal tilt for East Africa.
@@ -195,6 +230,7 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
 <h1 style="font-size:20px;margin:0 0 2px">Planting go / no-go - Uganda nurseries</h1>
 <div style="font-size:13px;color:#666;margin-bottom:10px">Updated {today} (EAT) · 4-model forecast (ECMWF/GFS/ICON/UKMO, multi-point) + ICON ensemble + NASA POWER satellite + ENSO, on rainfall climatology</div>
 {banner}
+<div style="font-size:13px;margin:0 0 10px"><a href="scorecard.html" style="color:#185FA5;text-decoration:none">→ Forecast model dependability scorecard</a></div>
 <div style="display:flex;gap:8px;margin-bottom:6px">
 <div style="flex:1;text-align:center;background:#1D9E75;color:#fff;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['GREEN']}</div><div style="font-size:12px">GO</div></div>
 <div style="flex:1;text-align:center;background:#EF9F27;color:#412402;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['AMBER']}</div><div style="font-size:12px">WATCH</div></div>
@@ -344,6 +380,10 @@ def main():
         w.writerows(rows)
 
     write_dashboard(rows, today_s, os.path.join(OUTDIR, "dashboard.html"), seasonal, clim, cur_wk)
+    try:
+        log_models(order, D, today_s)
+    except Exception as e:
+        print("model log skipped:", e)
     counts = {s: sum(1 for r in rows if r["status"] == s) for s in ("GREEN", "AMBER", "RED")}
     print(f"{today_s}  GREEN={counts['GREEN']} AMBER={counts['AMBER']} RED={counts['RED']}")
     for r in rows:

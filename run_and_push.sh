@@ -5,6 +5,7 @@ export HOME=/Users/quinn
 cd /Users/quinn/planting-monitor || exit 1
 
 /usr/bin/python3 planting_monitor.py >> monitor.log 2>&1
+/usr/bin/python3 scorecard.py >> monitor.log 2>&1
 
 /usr/bin/git add -A
 if ! /usr/bin/git diff --cached --quiet; then
