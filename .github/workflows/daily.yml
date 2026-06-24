@@ -1,0 +1,38 @@
+name: daily-planting-update
+
+# Runs the monitor in GitHub's cloud so it no longer depends on a laptop being awake.
+on:
+  schedule:
+    - cron: "0 3 * * *"      # 03:00 UTC = 06:00 EAT
+  workflow_dispatch:           # allow manual "Run workflow" / gh workflow run
+
+permissions:
+  contents: write              # let the run commit refreshed outputs back
+
+concurrency:                   # never let two runs collide
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run monitor + scorecard
+        run: |
+          python planting_monitor.py
+          python scorecard.py
+      - name: Commit & push refreshed outputs
+        run: |
+          git config user.name  "planting-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add planting_monitor_out
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Daily planting update $(date -u +%Y-%m-%d)"
+            git push
+          fi

@@ -223,10 +223,23 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
 <span>Plant by: <b>{r['plant_by']}</b></span></div></div>""")
     forecast_tbl = forecast_table_html(rows)
     calendar = weekly_calendar_html(clim, cur_wk) if clim else ""
+    # client-side freshness check: runs in the VIEWER's browser, so it flags stale
+    # data even if the whole pipeline silently stopped days ago.
+    fresh_script = (
+        '<script>(function(){var GEN="' + today + '";'
+        'var g=new Date(GEN+"T06:00:00+03:00");'
+        'var days=Math.floor((Date.now()-g.getTime())/86400000);'
+        'var el=document.getElementById("fresh");if(!el)return;var bg,fg,msg;'
+        'if(days<=1){bg="#e1f5ee";fg="#04342c";msg="\\u2713 Live \\u2014 updated "+(days<=0?"today":"yesterday")+" ("+GEN+")";}'
+        'else if(days==2){bg="#faeeda";fg="#412402";msg="\\u26a0 Data is 2 days old (last update "+GEN+") \\u2014 check it is still running";}'
+        'else{bg="#fceaea";fg="#791f1f";msg="\\u26a0 STALE: data is "+days+" days old (last update "+GEN+"). The daily update has likely stopped \\u2014 do not rely on this until refreshed.";}'
+        'el.style.cssText="padding:8px 12px;border-radius:8px;margin:0 0 12px;font-size:13px;font-weight:500;background:"+bg+";color:"+fg;'
+        'el.textContent=msg;})();</script>')
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Planting monitor - Uganda</title></head>
 <body style="font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:14px;color:#222;background:#f6f6f4">
+<div id="fresh"></div>
 <h1 style="font-size:20px;margin:0 0 2px">Planting go / no-go - Uganda nurseries</h1>
 <div style="font-size:13px;color:#666;margin-bottom:10px">Updated {today} (EAT) · 4-model forecast (ECMWF/GFS/ICON/UKMO, multi-point) + ICON ensemble + NASA POWER satellite + ENSO, on rainfall climatology</div>
 {banner}
@@ -241,6 +254,7 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
 <div style="font-size:11px;color:#999;margin-top:14px;line-height:1.5">GO = plant now. WATCH = hold a few days / confirm local rains. HOLD = do not plant (dry spell ahead or season window closed).
 Confidence = how many of the 4 models agree with the lead forecast. Satellite (NASA POWER) has a ~3-day lag, so it confirms rains have <i>started</i>, not today's sky.
 Forecast skill is low beyond ~7 days in the tropics; treat the 1-7 day window as the actionable signal and confirm rains on the ground before large batches.</div>
+{fresh_script}
 </body></html>"""
     open(path, "w").write(html)
 
