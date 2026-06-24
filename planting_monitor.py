@@ -89,7 +89,54 @@ DASH_CSS = {"GREEN": ("#1D9E75", "#04342C"), "AMBER": ("#EF9F27", "#412402"), "R
 DASH_LABEL = {"GREEN": "GO", "AMBER": "WATCH", "RED": "HOLD"}
 CONF_CSS = {"HIGH": "#1D9E75", "MED": "#BA7517", "LOW": "#E24B4A"}
 
-def write_dashboard(rows, today, path, seasonal=None):
+def cell_color(v):
+    if v is None: return ("#eee", "#777")
+    if v <= 5:  return ("#1D9E75", "#fff")
+    if v <= 15: return ("#EF9F27", "#412402")
+    if v <= 25: return ("#BA7517", "#fff")
+    return ("#E24B4A", "#fff")
+
+def weekly_calendar_html(clim, cur_wk):
+    """Self-contained HTML table: per-district weekly dry-spell-risk climatology."""
+    W0, W1 = 9, 47                       # weeks 10..47 -> early Mar .. late Nov
+    labels = clim["wk_label"]
+    order = clim["order"]; D = clim["districts"]
+    # month header spans
+    mhead = '<th style="border:0"></th>'
+    i = W0
+    while i < W1:
+        m = labels[i][3:]; j = i
+        while j < W1 and labels[j][3:] == m: j += 1
+        mhead += f'<th colspan="{j-i}" style="font-weight:400;font-size:10px;color:#888;text-align:left;border:0">{m}</th>'
+        i = j
+    now_col = cur_wk - W0
+    rows_html = ""
+    for idx, d in enumerate(order):
+        wk = D[d]["wk_risk"]; pbw = D[d]["pbw"]
+        tag = " (east)" if idx >= 14 else ""
+        cells = ""
+        for w in range(W0, W1):
+            v = wk[w] if w < len(wk) else None
+            bg, fg = cell_color(v)
+            extra = ""
+            if w == cur_wk: extra += "outline:2px solid #111;outline-offset:-1px;"
+            if w == pbw:    extra += "border-left:3px solid #111;"
+            cells += (f'<td title="{d} · week of {labels[w]} · {v}% risk" '
+                      f'style="background:{bg};color:{fg};width:17px;height:20px;text-align:center;'
+                      f'font-size:8px;border-radius:2px;{extra}">{v}</td>')
+        rows_html += (f'<tr><td style="font-size:11px;font-weight:500;white-space:nowrap;'
+                      f'padding-right:6px;border:0">{d}{tag}</td>{cells}</tr>')
+    now_label = labels[cur_wk] if 0 <= cur_wk < len(labels) else ""
+    return f"""<h2 style="font-size:16px;margin:22px 0 4px">Seasonal dry-spell risk calendar</h2>
+<div style="font-size:12px;color:#666;margin-bottom:8px">Climatology (18-19 yr). Each cell = chance a 10-day dry spell follows planting that week. <b>Black outline</b> = this week ({now_label}); <b>black notch</b> = plant-by deadline.</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:#666;margin-bottom:8px">
+<span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#1D9E75;vertical-align:-1px"></span> go &le;5%</span>
+<span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#EF9F27;vertical-align:-1px"></span> watch 5-15%</span>
+<span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#BA7517;vertical-align:-1px"></span> caution 15-25%</span>
+<span><span style="display:inline-block;width:11px;height:11px;border-radius:2px;background:#E24B4A;vertical-align:-1px"></span> stop &gt;25%</span></div>
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="border-collapse:separate;border-spacing:2px"><thead><tr>{mhead}</tr></thead><tbody>{rows_html}</tbody></table></div>"""
+
+def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
     pri = {"RED": 0, "AMBER": 1, "GREEN": 2}
     rows = sorted(rows, key=lambda r: (pri[r["status"]], -r["fc_next7_mm"]))
     counts = {s: sum(1 for r in rows if r["status"] == s) for s in ("GREEN", "AMBER", "RED")}
@@ -115,6 +162,7 @@ def write_dashboard(rows, today, path, seasonal=None):
 <span>Satellite last 10d: <b>{r['sat_obs_last10_mm']} mm</b></span>
 <span>Rains active: <b>{r['rains_active']}</b></span>
 <span>Plant by: <b>{r['plant_by']}</b></span></div></div>""")
+    calendar = weekly_calendar_html(clim, cur_wk) if clim else ""
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Planting monitor - Uganda</title></head>
@@ -127,6 +175,7 @@ def write_dashboard(rows, today, path, seasonal=None):
 <div style="flex:1;text-align:center;background:#EF9F27;color:#412402;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['AMBER']}</div><div style="font-size:12px">WATCH</div></div>
 <div style="flex:1;text-align:center;background:#E24B4A;color:#fff;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['RED']}</div><div style="font-size:12px">HOLD</div></div></div>
 {''.join(cards)}
+{calendar}
 <div style="font-size:11px;color:#999;margin-top:14px;line-height:1.5">GO = plant now. WATCH = hold a few days / confirm local rains. HOLD = do not plant (dry spell ahead or season window closed).
 Confidence = how many of the 4 models agree with the lead forecast. Satellite (NASA POWER) has a ~3-day lag, so it confirms rains have <i>started</i>, not today's sky.
 Forecast skill is low beyond ~7 days in the tropics; treat the 1-7 day window as the actionable signal and confirm rains on the ground before large batches.</div>
@@ -264,7 +313,7 @@ def main():
             w.writerow({c: r.get(c, "") for c in cols})
         w.writerows(rows)
 
-    write_dashboard(rows, today_s, os.path.join(OUTDIR, "dashboard.html"), seasonal)
+    write_dashboard(rows, today_s, os.path.join(OUTDIR, "dashboard.html"), seasonal, clim, cur_wk)
     counts = {s: sum(1 for r in rows if r["status"] == s) for s in ("GREEN", "AMBER", "RED")}
     print(f"{today_s}  GREEN={counts['GREEN']} AMBER={counts['AMBER']} RED={counts['RED']}")
     for r in rows:
