@@ -252,7 +252,7 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
 <h1 style="font-size:20px;margin:0 0 2px">Planting go / no-go - Uganda nurseries</h1>
 <div style="font-size:13px;color:#666;margin-bottom:10px">Updated {today} (EAT) · 4-model forecast (ECMWF/GFS/ICON/UKMO, multi-point) + ICON ensemble + NASA POWER satellite + ENSO, on rainfall climatology</div>
 {banner}
-<div style="font-size:13px;margin:0 0 10px"><a href="scorecard.html" style="color:#185FA5;text-decoration:none">→ Forecast model dependability scorecard</a></div>
+<div style="font-size:13px;margin:0 0 10px"><a href="scorecard.html" style="color:#185FA5;text-decoration:none">→ Forecast model dependability scorecard</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="nursery_map.html" style="color:#185FA5;text-decoration:none">→ Nursery locations map</a></div>
 <div style="display:flex;gap:8px;margin-bottom:6px">
 <div style="flex:1;text-align:center;background:#1D9E75;color:#fff;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['GREEN']}</div><div style="font-size:12px">GO</div></div>
 <div style="flex:1;text-align:center;background:#EF9F27;color:#412402;border-radius:8px;padding:8px"><div style="font-size:22px;font-weight:700">{counts['AMBER']}</div><div style="font-size:12px">WATCH</div></div>
