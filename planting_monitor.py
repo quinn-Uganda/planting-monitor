@@ -218,10 +218,10 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
         bg, fg = DASH_CSS[r["status"]]
         cc = CONF_CSS[r["confidence"]]
         cards.append(f"""<div style="border:1px solid #ddd;border-left:6px solid {bg};border-radius:8px;padding:10px 12px;margin:8px 0;background:#fff">
-<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
 <span style="font-size:17px;font-weight:600;color:#222">{r['district']}</span>
-<span><span style="font-size:11px;color:{cc};border:1px solid {cc};padding:2px 7px;border-radius:6px;margin-right:6px">{r['confidence']} confidence · {r['models_agree']}</span>
-<span style="background:{bg};color:{fg};font-weight:600;font-size:13px;padding:3px 10px;border-radius:6px">{DASH_LABEL[r['status']]}</span></span></div>
+<span style="background:{bg};color:{fg};font-weight:600;font-size:13px;padding:3px 10px;border-radius:6px;flex-shrink:0;white-space:nowrap">{DASH_LABEL[r['status']]}</span></div>
+<div style="margin:5px 0 0"><span style="font-size:11px;color:{cc};border:1px solid {cc};padding:2px 7px;border-radius:6px;display:inline-block">{r['confidence']} confidence · {r['models_agree']}</span></div>
 <div style="font-size:13px;color:#444;margin:6px 0 8px">{r['reason']}</div>
 <div style="font-size:12px;color:#666;display:flex;flex-wrap:wrap;gap:10px">
 <span>Forecast next 7d: <b>{r['fc_next7_mm']} mm</b> <span style="color:#999">(±{r['fc_spread_mm']} across {r['sample_points']} pts)</span></span>
