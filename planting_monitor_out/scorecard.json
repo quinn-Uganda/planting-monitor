@@ -1,0 +1,92 @@
+[
+ {
+  "model": "ecmwf_aifs025_single",
+  "n": 22,
+  "mae": 2.6,
+  "bias": -2.58,
+  "csi": 1.0,
+  "pod": 1.0,
+  "far": 0.0,
+  "acc": 1.0
+ },
+ {
+  "model": "ecmwf_ifs025",
+  "n": 22,
+  "mae": 2.83,
+  "bias": -1.38,
+  "csi": 0.91,
+  "pod": 0.91,
+  "far": 0.0,
+  "acc": 0.91
+ },
+ {
+  "model": "jma_seamless",
+  "n": 22,
+  "mae": 2.98,
+  "bias": -1.61,
+  "csi": 0.73,
+  "pod": 0.73,
+  "far": 0.0,
+  "acc": 0.73
+ },
+ {
+  "model": "knmi_seamless",
+  "n": 22,
+  "mae": 3.22,
+  "bias": -1.96,
+  "csi": 0.77,
+  "pod": 0.77,
+  "far": 0.0,
+  "acc": 0.77
+ },
+ {
+  "model": "icon_seamless",
+  "n": 22,
+  "mae": 3.72,
+  "bias": -2.73,
+  "csi": 0.68,
+  "pod": 0.68,
+  "far": 0.0,
+  "acc": 0.68
+ },
+ {
+  "model": "gem_seamless",
+  "n": 22,
+  "mae": 4.16,
+  "bias": -4.16,
+  "csi": 0.77,
+  "pod": 0.77,
+  "far": 0.0,
+  "acc": 0.77
+ },
+ {
+  "model": "meteofrance_seamless",
+  "n": 22,
+  "mae": 4.48,
+  "bias": -0.91,
+  "csi": 0.59,
+  "pod": 0.59,
+  "far": 0.0,
+  "acc": 0.59
+ },
+ {
+  "model": "ukmo_seamless",
+  "n": 22,
+  "mae": 4.49,
+  "bias": -4.24,
+  "csi": 0.5,
+  "pod": 0.5,
+  "far": 0.0,
+  "acc": 0.5
+ },
+ {
+  "model": "gfs_seamless",
+  "n": 22,
+  "mae": 4.51,
+  "bias": -4.51,
+  "csi": 0.32,
+  "pod": 0.32,
+  "far": 0.0,
+  "acc": 0.32
+ }
+]
