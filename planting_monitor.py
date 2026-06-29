@@ -267,7 +267,9 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
 <span>Rains active: <b>{r['rains_active']}</b></span>
 <span>Plant by: <b>{r['plant_by']}</b></span></div></div>""")
     forecast_tbl = forecast_table_html(rows)
-    calendar = weekly_calendar_html(clim, cur_wk) if clim else ""
+    # Seasonal dry-spell calendar temporarily hidden for external sharing (re-enable later
+    # this week by restoring the line below).
+    calendar = ""  # weekly_calendar_html(clim, cur_wk) if clim else ""
     # client-side freshness check: runs in the VIEWER's browser, so it flags stale
     # data even if the whole pipeline silently stopped days ago.
     fresh_script = (
