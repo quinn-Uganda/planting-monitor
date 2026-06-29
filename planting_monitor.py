@@ -258,10 +258,17 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
         'else if(days==2){bg="#faeeda";fg="#412402";msg="\\u26a0 Data is 2 days old (last update "+GEN+") \\u2014 check it is still running";}'
         'else{bg="#fceaea";fg="#791f1f";msg="\\u26a0 STALE: data is "+days+" days old (last update "+GEN+"). The daily update has likely stopped \\u2014 do not rely on this until refreshed.";}'
         'el.style.cssText="padding:8px 12px;border-radius:8px;margin:0 0 12px;font-size:13px;font-weight:500;background:"+bg+";color:"+fg;'
-        'el.textContent=msg;})();</script>')
+        'el.textContent=msg;'
+        # auto-update: if the server has a newer build than this (possibly cached) page,
+        # force a fresh reload so viewers never sit on a stale cached copy.
+        'fetch("status_simple.json?cb="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})'
+        '.then(function(d){if(d&&d.updated&&d.updated>GEN&&location.search.indexOf("v=")<0){'
+        'location.replace(location.pathname+"?v="+Date.now());}}).catch(function(){});'
+        '})();</script>')
     html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Planting monitor - Uganda</title></head>
+<title>Planting monitor - Uganda</title>
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><meta http-equiv="Pragma" content="no-cache"></head>
 <body style="font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:14px;color:#222;background:#f6f6f4">
 <div id="fresh"></div>
 <h1 style="font-size:20px;margin:0 0 2px">Planting go / no-go - Uganda nurseries</h1>
