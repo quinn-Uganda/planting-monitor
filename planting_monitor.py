@@ -133,6 +133,21 @@ DASH_CSS = {"GREEN": ("#1D9E75", "#04342C"), "AMBER": ("#EF9F27", "#412402"), "R
 DASH_LABEL = {"GREEN": "GO", "AMBER": "WATCH", "RED": "HOLD"}
 CONF_CSS = {"HIGH": "#1D9E75", "MED": "#BA7517", "LOW": "#E24B4A"}
 
+def write_simple_feed(rows, D, today, path):
+    """Compact public status feed for downstream consumers (e.g. an assistant pulling
+    into another dashboard). Additive — does not affect any other output."""
+    key = {"GREEN": "go", "AMBER": "watch", "RED": "hold"}
+    counts = {"go": 0, "watch": 0, "hold": 0}
+    out_d = []
+    for r in rows:
+        counts[key[r["status"]]] += 1
+        pbw = D[r["district"]]["pbw"]
+        plant_by = (datetime.date(today.year, 1, 1) + datetime.timedelta(days=pbw * 7)).isoformat()
+        out_d.append({"name": r["district"], "status": DASH_LABEL[r["status"]],
+                      "mm": r["fc_next7_mm"], "plant_by": plant_by})
+    json.dump({"updated": today.isoformat(), "counts": counts, "districts": out_d},
+              open(path, "w"), indent=2)
+
 def cell_color(v):
     if v is None: return ("#eee", "#777")
     if v <= 5:  return ("#1D9E75", "#fff")
@@ -392,6 +407,7 @@ def main():
         w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(rows)
     json.dump({"generated": today_s, "seasonal": seasonal, "rows": rows},
               open(os.path.join(OUTDIR, "status.json"), "w"), indent=1)
+    write_simple_feed(rows, D, today, os.path.join(OUTDIR, "status_simple.json"))
     hist = os.path.join(OUTDIR, "history.csv")
     prior = [r for r in csv.DictReader(open(hist))] if os.path.exists(hist) else []
     prior = [r for r in prior if r.get("date") != today_s]
