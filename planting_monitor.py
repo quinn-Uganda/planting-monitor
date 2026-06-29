@@ -155,10 +155,25 @@ def cell_color(v):
     if v <= 25: return ("#BA7517", "#fff")
     return ("#E24B4A", "#fff")
 
+# Display order: group by sub-region (Acholi, then Lango, then others), not by status.
+SUBREGION = {
+    "Agago": "Acholi", "Amuru": "Acholi", "Gulu": "Acholi", "Kitgum": "Acholi",
+    "Lamwo": "Acholi", "Nwoya": "Acholi", "Omoro": "Acholi", "Pader": "Acholi",
+    "Alebtong": "Lango", "Amolatar": "Lango", "Apac": "Lango", "Dokolo": "Lango",
+    "Kole": "Lango", "Kwania": "Lango", "Lira": "Lango", "Otuke": "Lango", "Oyam": "Lango",
+    "Amuria": "Teso", "Kalaki": "Teso", "Kaberamaido": "Teso",
+    "Kagadi": "Bunyoro", "Kyenjojo": "Tooro",
+}
+GROUP_RANK = {"Acholi": 0, "Lango": 1, "Teso": 2, "Bunyoro": 3, "Tooro": 4}
+def region_key(name):
+    return (GROUP_RANK.get(SUBREGION.get(name, ""), 5), name)
+def region_band(name):
+    sr = SUBREGION.get(name, "")
+    return sr if sr in ("Acholi", "Lango") else "Other regions"
+
 def forecast_table_html(rows):
     """Per-district 2-week forecast rainfall + rain probability + climatological risk."""
-    pri = {"RED": 0, "AMBER": 1, "GREEN": 2}
-    rs = sorted(rows, key=lambda r: (pri[r["status"]], -r["fc_next7_mm"]))
+    rs = sorted(rows, key=lambda r: region_key(r["district"]))
     dot = {"GREEN": "#1D9E75", "AMBER": "#EF9F27", "RED": "#E24B4A"}
     body = ""
     for r in rs:
@@ -183,7 +198,8 @@ def weekly_calendar_html(clim, cur_wk):
     """Self-contained HTML table: per-district weekly dry-spell-risk climatology."""
     W0, W1 = 9, 47                       # weeks 10..47 -> early Mar .. late Nov
     labels = clim["wk_label"]
-    order = clim["order"]; D = clim["districts"]
+    D = clim["districts"]
+    order = sorted(clim["order"], key=region_key)   # Acholi, then Lango, then others
     # month header spans
     mhead = '<th style="border:0"></th>'
     i = W0
@@ -196,7 +212,8 @@ def weekly_calendar_html(clim, cur_wk):
     rows_html = ""
     for idx, d in enumerate(order):
         wk = D[d]["wk_risk"]; pbw = D[d]["pbw"]
-        tag = " (east)" if idx >= 14 else ""
+        sr = SUBREGION.get(d, "")
+        tag = "" if sr in ("Acholi", "Lango") else f" ({sr})"
         cells = ""
         for w in range(W0, W1):
             v = wk[w] if w < len(wk) else None
@@ -220,8 +237,7 @@ def weekly_calendar_html(clim, cur_wk):
 <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="border-collapse:separate;border-spacing:2px"><thead><tr>{mhead}</tr></thead><tbody>{rows_html}</tbody></table></div>"""
 
 def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
-    pri = {"RED": 0, "AMBER": 1, "GREEN": 2}
-    rows = sorted(rows, key=lambda r: (pri[r["status"]], -r["fc_next7_mm"]))
+    rows = sorted(rows, key=lambda r: region_key(r["district"]))
     counts = {s: sum(1 for r in rows if r["status"] == s) for s in ("GREEN", "AMBER", "RED")}
     banner = ""
     if seasonal and seasonal.get("text"):
@@ -229,7 +245,12 @@ def write_dashboard(rows, today, path, seasonal=None, clim=None, cur_wk=0):
                   f'padding:9px 12px;margin:0 0 12px;font-size:13px;color:#234">'
                   f'<b>Seasonal context:</b> {seasonal["text"]}</div>')
     cards = []
+    cur_band = None
     for r in rows:
+        band = region_band(r["district"])
+        if band != cur_band:
+            cur_band = band
+            cards.append(f'<h2 style="font-size:15px;font-weight:600;color:#555;margin:18px 0 2px;border-bottom:1px solid #ddd;padding-bottom:3px">{band}</h2>')
         bg, fg = DASH_CSS[r["status"]]
         cc = CONF_CSS[r["confidence"]]
         cards.append(f"""<div style="border:1px solid #ddd;border-left:6px solid {bg};border-radius:8px;padding:10px 12px;margin:8px 0;background:#fff">
