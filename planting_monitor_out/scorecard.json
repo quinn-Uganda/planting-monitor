@@ -1,92 +1,92 @@
 [
  {
   "model": "jma_seamless",
-  "n": 110,
-  "mae": 1.19,
-  "bias": -0.73,
-  "csi": 0.44,
-  "pod": 0.44,
-  "far": 0.0,
-  "acc": 0.73
- },
- {
-  "model": "ecmwf_ifs025",
-  "n": 110,
-  "mae": 1.2,
-  "bias": -0.4,
-  "csi": 0.52,
-  "pod": 0.56,
-  "far": 0.12,
-  "acc": 0.75
- },
- {
-  "model": "ecmwf_aifs025_single",
-  "n": 110,
-  "mae": 1.34,
-  "bias": -0.16,
+  "n": 198,
+  "mae": 0.86,
+  "bias": -0.53,
   "csi": 0.4,
-  "pod": 0.63,
-  "far": 0.48,
-  "acc": 0.53
- },
- {
-  "model": "knmi_seamless",
-  "n": 110,
-  "mae": 1.36,
-  "bias": -0.48,
-  "csi": 0.42,
-  "pod": 0.46,
-  "far": 0.19,
-  "acc": 0.68
+  "pod": 0.4,
+  "far": 0.0,
+  "acc": 0.79
  },
  {
   "model": "ukmo_seamless",
-  "n": 110,
-  "mae": 1.51,
-  "bias": -1.44,
-  "csi": 0.2,
-  "pod": 0.2,
-  "far": 0.08,
-  "acc": 0.6
+  "n": 198,
+  "mae": 1.09,
+  "bias": -0.86,
+  "csi": 0.19,
+  "pod": 0.21,
+  "far": 0.32,
+  "acc": 0.69
+ },
+ {
+  "model": "ecmwf_aifs025_single",
+  "n": 198,
+  "mae": 1.11,
+  "bias": 0.2,
+  "csi": 0.38,
+  "pod": 0.71,
+  "far": 0.55,
+  "acc": 0.59
+ },
+ {
+  "model": "ecmwf_ifs025",
+  "n": 198,
+  "mae": 1.13,
+  "bias": 0.07,
+  "csi": 0.46,
+  "pod": 0.57,
+  "far": 0.3,
+  "acc": 0.76
+ },
+ {
+  "model": "knmi_seamless",
+  "n": 198,
+  "mae": 1.3,
+  "bias": 0.09,
+  "csi": 0.38,
+  "pod": 0.49,
+  "far": 0.36,
+  "acc": 0.72
  },
  {
   "model": "icon_seamless",
-  "n": 110,
-  "mae": 1.57,
-  "bias": -0.61,
-  "csi": 0.3,
-  "pod": 0.39,
-  "far": 0.42,
-  "acc": 0.56
+  "n": 198,
+  "mae": 1.36,
+  "bias": -0.1,
+  "csi": 0.27,
+  "pod": 0.37,
+  "far": 0.52,
+  "acc": 0.64
  },
  {
   "model": "meteofrance_seamless",
-  "n": 110,
-  "mae": 1.58,
-  "bias": -0.63,
-  "csi": 0.28,
-  "pod": 0.3,
-  "far": 0.2,
-  "acc": 0.62
- },
- {
-  "model": "gfs_seamless",
-  "n": 110,
-  "mae": 1.65,
-  "bias": -1.17,
-  "csi": 0.16,
-  "pod": 0.19,
-  "far": 0.41,
-  "acc": 0.54
+  "n": 176,
+  "mae": 1.36,
+  "bias": -0.28,
+  "csi": 0.25,
+  "pod": 0.29,
+  "far": 0.32,
+  "acc": 0.68
  },
  {
   "model": "gem_seamless",
-  "n": 110,
-  "mae": 2.16,
-  "bias": -0.14,
-  "csi": 0.44,
-  "pod": 0.59,
-  "far": 0.36,
-  "acc": 0.64
+  "n": 198,
+  "mae": 1.42,
+  "bias": -0.11,
+  "csi": 0.41,
+  "pod": 0.54,
+  "far": 0.38,
+  "acc": 0.72
+ },
+ {
+  "model": "gfs_seamless",
+  "n": 198,
+  "mae": 1.43,
+  "bias": -0.37,
+  "csi": 0.19,
+  "pod": 0.26,
+  "far": 0.58,
+  "acc": 0.61
  }
 ]
