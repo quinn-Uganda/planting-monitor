@@ -1,23 +1,23 @@
 date,district,status,confidence,models_agree,reason,rains_active,sat_obs_last10_mm,fc_next7_mm,fc_week2_mm,fc_spread_mm,sample_points,fc_rain_prob_7d_%,fc_dryspell_days,ens_dryspell_prob,clim_risk_thisweek_%,plant_by,lat,lon
-2026-07-03,Agago,AMBER,HIGH,1/4 models wet,"thin rain ahead (12.9mm/7d, ens dry-risk 60%)",yes,20.7,12.9,42.2,9.3,4,50,4,0.6,8,24 Sep,2.865,33.302
-2026-07-03,Otuke,AMBER,HIGH,1/4 models wet,"thin rain ahead (10.5mm/7d, ens dry-risk 50%)",no,18.6,10.5,47.7,4.2,4,46,1,0.5,9,15 Oct,2.504,33.335
-2026-07-03,Kitgum,AMBER,HIGH,1/4 models wet,"thin rain ahead (12.1mm/7d, ens dry-risk 65%)",yes,20.6,12.1,46.8,7.9,4,52,5,0.65,7,15 Oct,3.294,33.086
-2026-07-03,Pader,AMBER,HIGH,0/4 models wet,"thin rain ahead (13.6mm/7d, ens dry-risk 55%)",yes,20.7,13.6,49.0,8.6,4,60,2,0.55,7,15 Oct,2.891,32.932
-2026-07-03,Alebtong,AMBER,HIGH,1/4 models wet,"marginal (14.9mm/7d, clim risk 14%)",no,18.6,14.9,45.2,11.3,4,46,1,0.3,14,15 Oct,2.327,33.141
-2026-07-03,Lira,AMBER,HIGH,0/4 models wet,"marginal (12.6mm/7d, clim risk 13%)",no,18.6,12.6,50.9,8.9,4,57,1,0.17,13,15 Oct,2.419,32.882
-2026-07-03,Kole,AMBER,LOW,1/4 models wet,"marginal (15.9mm/7d, clim risk 14%)",no,18.4,15.9,51.6,1.3,4,57,1,0.17,14,15 Oct,2.358,32.705
-2026-07-03,Oyam,AMBER,LOW,0/4 models wet,"marginal (16.1mm/7d, clim risk 16%)",no,18.4,16.1,52.5,11.2,4,52,3,0.17,16,15 Oct,2.439,32.501
-2026-07-03,Apac,AMBER,HIGH,1/4 models wet,"marginal (9.4mm/7d, clim risk 22%)",yes,22.0,9.4,49.4,11.3,4,34,3,0.2,22,15 Oct,2.127,32.574
-2026-07-03,Gulu,AMBER,MED,2/4 models wet,"marginal (17.4mm/7d, clim risk 7%)",no,19.7,17.4,56.2,2.1,4,55,1,0.38,7,15 Oct,2.91,32.378
-2026-07-03,Omoro,AMBER,MED,2/4 models wet,"marginal (14.9mm/7d, clim risk 10%)",no,18.4,14.9,47.7,3.6,4,50,1,0.2,10,15 Oct,2.676,32.637
-2026-07-03,Nwoya,AMBER,MED,2/4 models wet,"marginal (17.6mm/7d, clim risk 10%)",no,19.1,17.6,58.1,10.3,4,29,3,0.12,10,15 Oct,2.635,31.989
-2026-07-03,Amuru,AMBER,MED,2/4 models wet,"marginal (13.1mm/7d, clim risk 7%)",yes,20.5,13.1,54.2,7.5,4,30,3,0.1,7,15 Oct,2.989,32.016
-2026-07-03,Lamwo,AMBER,HIGH,1/4 models wet,"thin rain ahead (12.1mm/7d, ens dry-risk 55%)",yes,27.8,12.1,47.0,6.2,4,57,4,0.55,6,15 Oct,3.501,32.736
-2026-07-03,Amolatar,AMBER,HIGH,0/4 models wet,"thin rain ahead (7.1mm/7d, ens dry-risk 28%)",yes,28.4,7.1,51.0,2.2,4,35,3,0.28,17,01 Oct,1.702,32.816
-2026-07-03,Kalaki,AMBER,HIGH,0/4 models wet,"marginal (14.0mm/7d, clim risk 13%)",yes,26.3,14.0,62.2,10.6,4,55,2,0.33,13,24 Sep,1.896,33.4
-2026-07-03,Amuria,AMBER,HIGH,0/4 models wet,"marginal (13.5mm/7d, clim risk 11%)",yes,26.3,13.5,67.8,0.0,4,52,2,0.33,11,24 Sep,2.038,33.398
-2026-07-03,Kaberamaido,AMBER,HIGH,0/4 models wet,"marginal (8.4mm/7d, clim risk 10%)",yes,28.4,8.4,55.3,1.4,4,35,2,0.23,10,01 Oct,1.747,33.13
-2026-07-03,Kagadi,AMBER,HIGH,0/4 models wet,"thin rain ahead (7.0mm/7d, ens dry-risk 93%)",no,14.8,7.0,46.7,5.0,3,49,3,0.93,21,22 Oct,1.019,30.841
-2026-07-03,Dokolo,AMBER,HIGH,0/4 models wet,"thin rain ahead (7.6mm/7d, ens dry-risk 15%)",yes,26.3,7.6,53.4,3.1,4,39,2,0.15,11,01 Oct,1.912,33.0
-2026-07-03,Kwania,AMBER,HIGH,0/4 models wet,"marginal (9.7mm/7d, clim risk 11%)",yes,22.0,9.7,74.2,0.0,4,39,2,0.15,11,01 Oct,1.974,32.796
-2026-07-03,Kyenjojo,AMBER,HIGH,0/4 models wet,"thin rain ahead (5.3mm/7d, ens dry-risk 97%)",no,14.8,5.3,44.4,0.0,3,41,3,0.97,31,15 Oct,0.797,30.691
+2026-07-03,Agago,AMBER,HIGH,1/4 models wet,"thin rain ahead (14.8mm/7d, ens dry-risk 60%)",yes,20.7,14.8,42.2,10.4,4,48,3,0.6,8,24 Sep,2.865,33.302
+2026-07-03,Otuke,AMBER,HIGH,0/4 models wet,"thin rain ahead (13.5mm/7d, ens dry-risk 75%)",no,18.6,13.5,47.7,10.4,4,48,5,0.75,9,15 Oct,2.504,33.335
+2026-07-03,Kitgum,AMBER,HIGH,1/4 models wet,"thin rain ahead (10.8mm/7d, ens dry-risk 60%)",yes,20.6,10.8,46.8,5.7,4,52,2,0.6,7,15 Oct,3.294,33.086
+2026-07-03,Pader,AMBER,LOW,1/4 models wet,"thin rain ahead (17.0mm/7d, ens dry-risk 45%)",yes,20.7,17.0,49.0,13.0,4,50,1,0.45,7,15 Oct,2.891,32.932
+2026-07-03,Alebtong,AMBER,MED,2/4 models wet,"thin rain ahead (12.7mm/7d, ens dry-risk 45%)",no,18.6,12.7,45.2,9.0,4,48,5,0.45,14,15 Oct,2.327,33.141
+2026-07-03,Lira,AMBER,HIGH,0/4 models wet,"marginal (11.5mm/7d, clim risk 13%)",no,18.6,11.5,50.9,5.7,4,53,2,0.33,13,15 Oct,2.419,32.882
+2026-07-03,Kole,AMBER,HIGH,0/4 models wet,"marginal (12.5mm/7d, clim risk 14%)",no,18.4,12.5,51.6,1.0,4,53,2,0.23,14,15 Oct,2.358,32.705
+2026-07-03,Oyam,AMBER,HIGH,1/4 models wet,"marginal (10.5mm/7d, clim risk 16%)",no,18.4,10.5,52.5,6.2,4,52,2,0.15,16,15 Oct,2.439,32.501
+2026-07-03,Apac,AMBER,HIGH,1/4 models wet,"thin rain ahead (6.7mm/7d, ens dry-risk 17%)",yes,22.0,6.7,49.4,7.8,4,34,3,0.17,22,15 Oct,2.127,32.574
+2026-07-03,Gulu,AMBER,LOW,1/4 models wet,"marginal (15.9mm/7d, clim risk 7%)",no,19.7,15.9,56.2,12.8,4,55,1,0.3,7,15 Oct,2.91,32.378
+2026-07-03,Omoro,AMBER,MED,2/4 models wet,"marginal (15.9mm/7d, clim risk 10%)",no,18.4,15.9,47.7,10.8,4,50,2,0.3,10,15 Oct,2.676,32.637
+2026-07-03,Nwoya,AMBER,HIGH,0/4 models wet,"marginal (10.0mm/7d, clim risk 10%)",no,19.1,10.0,58.1,2.8,4,29,3,0.15,10,15 Oct,2.635,31.989
+2026-07-03,Amuru,AMBER,LOW,3/4 models wet,"marginal (10.8mm/7d, clim risk 7%)",yes,20.5,10.8,54.2,8.7,4,34,3,0.05,7,15 Oct,2.989,32.016
+2026-07-03,Lamwo,AMBER,MED,2/4 models wet,"thin rain ahead (13.4mm/7d, ens dry-risk 56%)",yes,27.8,13.4,47.0,10.7,4,50,2,0.57,6,15 Oct,3.501,32.736
+2026-07-03,Amolatar,AMBER,HIGH,0/4 models wet,"thin rain ahead (5.2mm/7d, ens dry-risk 33%)",yes,28.4,5.2,51.0,1.2,4,37,4,0.33,17,01 Oct,1.702,32.816
+2026-07-03,Kalaki,AMBER,HIGH,0/4 models wet,"thin rain ahead (10.7mm/7d, ens dry-risk 60%)",yes,26.3,10.7,62.2,6.5,4,49,2,0.6,13,24 Sep,1.896,33.4
+2026-07-03,Amuria,AMBER,HIGH,1/4 models wet,"thin rain ahead (11.0mm/7d, ens dry-risk 60%)",yes,26.3,11.0,67.8,0.0,4,49,5,0.6,11,24 Sep,2.038,33.398
+2026-07-03,Kaberamaido,AMBER,HIGH,0/4 models wet,"thin rain ahead (6.3mm/7d, ens dry-risk 28%)",yes,28.4,6.3,55.3,1.7,4,37,4,0.28,10,01 Oct,1.747,33.13
+2026-07-03,Kagadi,AMBER,HIGH,0/4 models wet,"thin rain ahead (7.7mm/7d, ens dry-risk 97%)",no,14.8,7.7,46.7,6.7,3,52,7,0.97,21,22 Oct,1.019,30.841
+2026-07-03,Dokolo,AMBER,HIGH,0/4 models wet,"thin rain ahead (6.9mm/7d, ens dry-risk 25%)",yes,26.3,6.9,53.4,2.0,4,41,3,0.25,11,01 Oct,1.912,33.0
+2026-07-03,Kwania,AMBER,HIGH,0/4 models wet,"thin rain ahead (7.5mm/7d, ens dry-risk 23%)",yes,22.0,7.5,74.2,0.0,4,41,3,0.23,11,01 Oct,1.974,32.796
+2026-07-03,Kyenjojo,AMBER,HIGH,0/4 models wet,"thin rain ahead (7.9mm/7d, ens dry-risk 97%)",no,14.8,7.9,44.4,0.0,3,47,2,0.97,31,15 Oct,0.797,30.691
