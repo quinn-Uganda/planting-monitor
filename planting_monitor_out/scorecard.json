@@ -1,92 +1,92 @@
 [
  {
   "model": "ecmwf_aifs025_single",
-  "n": 550,
-  "mae": 1.6,
-  "bias": -1.1,
-  "csi": 0.48,
-  "pod": 0.58,
-  "far": 0.25,
-  "acc": 0.62
+  "n": 660,
+  "mae": 1.63,
+  "bias": -1.01,
+  "csi": 0.59,
+  "pod": 0.68,
+  "far": 0.18,
+  "acc": 0.68
  },
  {
   "model": "knmi_seamless",
-  "n": 550,
-  "mae": 1.71,
-  "bias": -1.01,
-  "csi": 0.38,
-  "pod": 0.41,
-  "far": 0.17,
-  "acc": 0.59
- },
- {
-  "model": "jma_seamless",
-  "n": 550,
-  "mae": 1.74,
-  "bias": -1.39,
-  "csi": 0.31,
-  "pod": 0.32,
-  "far": 0.11,
-  "acc": 0.56
+  "n": 660,
+  "mae": 1.91,
+  "bias": -0.99,
+  "csi": 0.53,
+  "pod": 0.56,
+  "far": 0.1,
+  "acc": 0.66
  },
  {
   "model": "ecmwf_ifs025",
-  "n": 550,
-  "mae": 1.75,
-  "bias": -1.23,
-  "csi": 0.38,
-  "pod": 0.41,
-  "far": 0.15,
-  "acc": 0.59
+  "n": 660,
+  "mae": 2.03,
+  "bias": -1.07,
+  "csi": 0.52,
+  "pod": 0.55,
+  "far": 0.09,
+  "acc": 0.66
  },
  {
-  "model": "gem_seamless",
-  "n": 550,
-  "mae": 1.84,
-  "bias": -0.51,
-  "csi": 0.48,
-  "pod": 0.57,
-  "far": 0.24,
-  "acc": 0.63
+  "model": "jma_seamless",
+  "n": 660,
+  "mae": 2.14,
+  "bias": -1.82,
+  "csi": 0.4,
+  "pod": 0.41,
+  "far": 0.07,
+  "acc": 0.58
  },
  {
   "model": "meteofrance_seamless",
-  "n": 352,
-  "mae": 1.89,
-  "bias": -0.68,
-  "csi": 0.25,
-  "pod": 0.27,
-  "far": 0.17,
-  "acc": 0.56
+  "n": 396,
+  "mae": 2.17,
+  "bias": -0.92,
+  "csi": 0.33,
+  "pod": 0.35,
+  "far": 0.12,
+  "acc": 0.58
  },
  {
   "model": "gfs_seamless",
-  "n": 550,
-  "mae": 1.92,
-  "bias": -1.14,
-  "csi": 0.37,
-  "pod": 0.43,
-  "far": 0.26,
-  "acc": 0.55
+  "n": 660,
+  "mae": 2.27,
+  "bias": -1.29,
+  "csi": 0.47,
+  "pod": 0.52,
+  "far": 0.18,
+  "acc": 0.6
  },
  {
   "model": "icon_seamless",
-  "n": 550,
-  "mae": 1.93,
-  "bias": -0.45,
-  "csi": 0.39,
-  "pod": 0.44,
-  "far": 0.24,
-  "acc": 0.57
+  "n": 660,
+  "mae": 2.49,
+  "bias": -0.55,
+  "csi": 0.46,
+  "pod": 0.51,
+  "far": 0.17,
+  "acc": 0.6
  },
  {
   "model": "ukmo_seamless",
-  "n": 550,
-  "mae": 2.09,
-  "bias": -1.93,
-  "csi": 0.12,
-  "pod": 0.12,
-  "far": 0.29,
-  "acc": 0.43
+  "n": 660,
+  "mae": 2.61,
+  "bias": -2.37,
+  "csi": 0.21,
+  "pod": 0.22,
+  "far": 0.15,
+  "acc": 0.44
+ },
+ {
+  "model": "gem_seamless",
+  "n": 660,
+  "mae": 2.8,
+  "bias": -0.16,
+  "csi": 0.56,
+  "pod": 0.63,
+  "far": 0.17,
+  "acc": 0.66
  }
 ]
