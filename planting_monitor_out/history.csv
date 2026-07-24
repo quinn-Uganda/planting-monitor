@@ -677,3 +677,25 @@ date,district,status,confidence,models_agree,reason,rains_active,sat_obs_last10_
 2026-07-23,Dokolo,GREEN,HIGH,3/4 models wet,"23.7mm forecast next 7d, no dry spell, low seasonal risk",yes,38.0,23.7,24.6,9.2,4,48,2,0.03,6,01 Oct,1.912,33.0
 2026-07-23,Kwania,GREEN,HIGH,3/4 models wet,"27.5mm forecast next 7d, no dry spell, low seasonal risk",yes,37.5,27.5,26.2,0.0,4,48,2,0.0,0,01 Oct,1.974,32.796
 2026-07-23,Kyenjojo,AMBER,MED,2/4 models wet,"thin rain ahead (9.6mm/7d, ens dry-risk 56%)",yes,45.7,9.6,15.4,0.0,3,41,5,0.57,2,15 Oct,0.797,30.691
+2026-07-24,Agago,GREEN,HIGH,4/4 models wet,"28.4mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~25.1mm across the district — check local sites",yes,38.1,28.4,34.3,25.1,4,61,1,0.0,0,24 Sep,2.865,33.302
+2026-07-24,Otuke,GREEN,HIGH,3/4 models wet,"34.5mm forecast next 7d, no dry spell, low seasonal risk",yes,37.4,34.5,42.4,16.5,4,55,1,0.0,0,15 Oct,2.504,33.335
+2026-07-24,Kitgum,GREEN,HIGH,3/4 models wet,"30.4mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~24.4mm across the district — check local sites",yes,34.1,30.4,35.0,24.4,4,65,1,0.0,0,15 Oct,3.294,33.086
+2026-07-24,Pader,GREEN,HIGH,4/4 models wet,"33.0mm forecast next 7d, no dry spell, low seasonal risk",yes,38.1,33.0,43.8,16.4,4,63,0,0.0,0,15 Oct,2.891,32.932
+2026-07-24,Alebtong,GREEN,HIGH,3/4 models wet,"28.7mm forecast next 7d, no dry spell, low seasonal risk",yes,37.4,28.7,39.6,6.9,4,55,1,0.0,0,15 Oct,2.327,33.141
+2026-07-24,Lira,GREEN,HIGH,3/4 models wet,"24.8mm forecast next 7d, no dry spell, low seasonal risk",yes,37.4,24.8,22.2,7.2,4,54,3,0.0,6,15 Oct,2.419,32.882
+2026-07-24,Kole,GREEN,HIGH,3/4 models wet,"22.2mm forecast next 7d, no dry spell, low seasonal risk",yes,42.1,22.2,22.5,6.1,4,54,3,0.0,1,15 Oct,2.358,32.705
+2026-07-24,Oyam,GREEN,HIGH,3/4 models wet,"23.6mm forecast next 7d, no dry spell, low seasonal risk",yes,42.1,23.6,22.2,7.2,4,52,1,0.0,1,15 Oct,2.439,32.501
+2026-07-24,Apac,AMBER,HIGH,3/4 models wet,"marginal (16.0mm/7d, clim risk 10%)",yes,37.5,16.0,18.2,16.4,4,46,1,0.03,10,15 Oct,2.127,32.574
+2026-07-24,Gulu,GREEN,HIGH,3/4 models wet,"36.0mm forecast next 7d, no dry spell, low seasonal risk",yes,52.7,36.0,48.4,18.1,4,60,1,0.0,0,15 Oct,2.91,32.378
+2026-07-24,Omoro,GREEN,HIGH,3/4 models wet,"32.6mm forecast next 7d, no dry spell, low seasonal risk",yes,42.1,32.6,45.1,7.9,4,55,1,0.0,0,15 Oct,2.676,32.637
+2026-07-24,Nwoya,GREEN,HIGH,3/4 models wet,"30.8mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~23.6mm across the district — check local sites",yes,51.5,30.8,34.4,23.6,4,48,1,0.0,0,15 Oct,2.635,31.989
+2026-07-24,Amuru,GREEN,HIGH,3/4 models wet,"41.5mm forecast next 7d, no dry spell, low seasonal risk",yes,58.7,41.5,33.5,16.2,4,52,4,0.0,0,15 Oct,2.989,32.016
+2026-07-24,Lamwo,GREEN,HIGH,3/4 models wet,"26.8mm forecast next 7d, no dry spell, low seasonal risk",yes,57.8,26.8,29.5,14.3,4,74,0,0.03,0,15 Oct,3.501,32.736
+2026-07-24,Amolatar,AMBER,HIGH,3/4 models wet,"marginal (15.3mm/7d, clim risk 6%)",yes,35.3,15.3,13.6,8.6,4,41,3,0.03,6,01 Oct,1.702,32.816
+2026-07-24,Kalaki,GREEN,HIGH,3/4 models wet,"25.8mm forecast next 7d, no dry spell, low seasonal risk",yes,38.0,25.8,29.2,8.8,4,51,2,0.0,0,24 Sep,1.896,33.4
+2026-07-24,Amuria,GREEN,HIGH,3/4 models wet,"28.2mm forecast next 7d, no dry spell, low seasonal risk",yes,38.0,28.2,29.4,0.0,4,53,2,0.0,0,24 Sep,2.038,33.398
+2026-07-24,Kaberamaido,AMBER,MED,2/4 models wet,"marginal (18.4mm/7d, clim risk 0%)",yes,35.3,18.4,19.0,1.9,4,41,3,0.0,0,01 Oct,1.747,33.13
+2026-07-24,Kagadi,AMBER,LOW,3/4 models wet,"marginal (13.2mm/7d, clim risk 0%)",yes,45.7,13.2,20.5,5.5,3,59,3,0.05,0,22 Oct,1.019,30.841
+2026-07-24,Dokolo,GREEN,HIGH,3/4 models wet,"21.4mm forecast next 7d, no dry spell, low seasonal risk",yes,38.0,21.4,15.6,8.2,4,43,1,0.03,6,01 Oct,1.912,33.0
+2026-07-24,Kwania,AMBER,HIGH,3/4 models wet,"marginal (17.3mm/7d, clim risk 0%)",yes,37.5,17.3,16.4,0.0,4,43,1,0.0,0,01 Oct,1.974,32.796
+2026-07-24,Kyenjojo,AMBER,MED,2/4 models wet,"thin rain ahead (9.2mm/7d, ens dry-risk 47%)",yes,45.7,9.2,15.6,0.0,3,41,5,0.47,2,15 Oct,0.797,30.691
