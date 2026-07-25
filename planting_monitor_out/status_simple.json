@@ -1,8 +1,8 @@
 {
   "updated": "2026-07-25",
   "counts": {
-    "go": 19,
-    "watch": 3,
+    "go": 20,
+    "watch": 2,
     "hold": 0
   },
   "districts": [
@@ -122,7 +122,7 @@
     },
     {
       "name": "Dokolo",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 32.3,
       "plant_by": "2026-10-01"
     },
