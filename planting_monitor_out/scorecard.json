@@ -1,49 +1,49 @@
 [
  {
   "model": "ecmwf_aifs025_single",
-  "n": 3366,
-  "mae": 1.77,
-  "bias": -0.8,
-  "csi": 0.71,
-  "pod": 0.79,
-  "far": 0.13,
-  "acc": 0.74
+  "n": 3498,
+  "mae": 1.79,
+  "bias": -0.85,
+  "csi": 0.72,
+  "pod": 0.8,
+  "far": 0.12,
+  "acc": 0.75
  },
  {
   "model": "ecmwf_ifs025",
-  "n": 3366,
-  "mae": 2.44,
-  "bias": -0.46,
+  "n": 3498,
+  "mae": 2.45,
+  "bias": -0.5,
   "csi": 0.63,
   "pod": 0.68,
   "far": 0.11,
   "acc": 0.68
  },
  {
-  "model": "gfs_seamless",
-  "n": 3366,
-  "mae": 2.44,
-  "bias": -1.06,
-  "csi": 0.57,
-  "pod": 0.61,
-  "far": 0.1,
-  "acc": 0.64
- },
- {
   "model": "knmi_seamless",
-  "n": 3366,
-  "mae": 2.44,
-  "bias": -0.56,
+  "n": 3498,
+  "mae": 2.46,
+  "bias": -0.61,
   "csi": 0.6,
-  "pod": 0.65,
+  "pod": 0.64,
   "far": 0.1,
   "acc": 0.66
  },
  {
+  "model": "gfs_seamless",
+  "n": 3498,
+  "mae": 2.47,
+  "bias": -1.15,
+  "csi": 0.56,
+  "pod": 0.6,
+  "far": 0.1,
+  "acc": 0.62
+ },
+ {
   "model": "jma_seamless",
-  "n": 3366,
-  "mae": 2.81,
-  "bias": -0.59,
+  "n": 3498,
+  "mae": 2.82,
+  "bias": -0.65,
   "csi": 0.57,
   "pod": 0.62,
   "far": 0.12,
@@ -51,42 +51,42 @@
  },
  {
   "model": "ukmo_seamless",
-  "n": 3234,
-  "mae": 2.96,
-  "bias": -2.55,
-  "csi": 0.24,
-  "pod": 0.25,
-  "far": 0.04,
-  "acc": 0.38
- },
- {
-  "model": "icon_seamless",
   "n": 3366,
-  "mae": 3.02,
-  "bias": 0.42,
-  "csi": 0.61,
-  "pod": 0.66,
-  "far": 0.13,
-  "acc": 0.65
+  "mae": 2.98,
+  "bias": -2.59,
+  "csi": 0.24,
+  "pod": 0.24,
+  "far": 0.04,
+  "acc": 0.37
  },
  {
   "model": "meteofrance_seamless",
-  "n": 1650,
+  "n": 1716,
   "mae": 3.02,
-  "bias": -0.42,
-  "csi": 0.49,
-  "pod": 0.5,
+  "bias": -0.51,
+  "csi": 0.48,
+  "pod": 0.49,
   "far": 0.05,
-  "acc": 0.58
+  "acc": 0.57
+ },
+ {
+  "model": "icon_seamless",
+  "n": 3498,
+  "mae": 3.03,
+  "bias": 0.39,
+  "csi": 0.61,
+  "pod": 0.67,
+  "far": 0.12,
+  "acc": 0.65
  },
  {
   "model": "gem_seamless",
-  "n": 3366,
-  "mae": 3.94,
-  "bias": 1.26,
+  "n": 3498,
+  "mae": 3.9,
+  "bias": 1.18,
   "csi": 0.64,
-  "pod": 0.71,
-  "far": 0.13,
+  "pod": 0.7,
+  "far": 0.12,
   "acc": 0.68
  }
 ]
