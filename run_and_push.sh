@@ -5,6 +5,16 @@
 export HOME=/Users/quinn
 cd /Users/quinn/planting-monitor || exit 1
 ID='-c user.email=quinnneely@gmail.com -c user.name=quinn-Uganda'
+LOG=/Users/quinn/planting-monitor/monitor.log
+
+# Branch guard. In Aug 2026 this repo was left checked out on an unrelated branch
+# (another session's work), so every push silently failed for days. Bail loudly
+# rather than committing planting output onto someone else's branch.
+BR=$(/usr/bin/git rev-parse --abbrev-ref HEAD)
+if [ "$BR" != "main" ]; then
+    echo "$(date) ABORT: repo is on branch '$BR', expected 'main' — not touching it" >> "$LOG"
+    exit 1
+fi
 
 # 1. pull the cloud's latest first (autostash protects any stray local changes)
 /usr/bin/git $ID pull --rebase --autostash -q origin main >> monitor.log 2>&1
