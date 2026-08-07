@@ -1,8 +1,8 @@
 {
   "updated": "2026-08-07",
   "counts": {
-    "go": 9,
-    "watch": 13,
+    "go": 10,
+    "watch": 12,
     "hold": 0
   },
   "districts": [
@@ -14,7 +14,7 @@
     },
     {
       "name": "Otuke",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 32.1,
       "plant_by": "2026-10-15"
     },
@@ -50,7 +50,7 @@
     },
     {
       "name": "Oyam",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 20.7,
       "plant_by": "2026-10-15"
     },
@@ -104,7 +104,7 @@
     },
     {
       "name": "Amuria",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 25.7,
       "plant_by": "2026-09-24"
     },
