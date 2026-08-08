@@ -1,92 +1,92 @@
 [
  {
   "model": "ecmwf_aifs025_single",
-  "n": 5082,
-  "mae": 2.08,
-  "bias": -0.95,
+  "n": 5214,
+  "mae": 2.11,
+  "bias": -0.88,
   "csi": 0.81,
   "pod": 0.87,
-  "far": 0.08,
-  "acc": 0.82
+  "far": 0.07,
+  "acc": 0.83
  },
  {
   "model": "ecmwf_ifs025",
-  "n": 5082,
-  "mae": 2.72,
-  "bias": -0.57,
+  "n": 5214,
+  "mae": 2.79,
+  "bias": -0.48,
   "csi": 0.72,
-  "pod": 0.75,
+  "pod": 0.76,
   "far": 0.06,
-  "acc": 0.74
+  "acc": 0.75
  },
  {
   "model": "knmi_seamless",
-  "n": 5082,
-  "mae": 2.76,
-  "bias": -0.74,
-  "csi": 0.68,
-  "pod": 0.71,
+  "n": 5214,
+  "mae": 2.8,
+  "bias": -0.66,
+  "csi": 0.69,
+  "pod": 0.72,
   "far": 0.06,
-  "acc": 0.71
+  "acc": 0.72
  },
  {
   "model": "gfs_seamless",
-  "n": 5082,
-  "mae": 3.01,
-  "bias": -1.07,
-  "csi": 0.62,
-  "pod": 0.65,
+  "n": 5214,
+  "mae": 3.02,
+  "bias": -1.05,
+  "csi": 0.63,
+  "pod": 0.66,
   "far": 0.06,
-  "acc": 0.66
+  "acc": 0.67
  },
  {
   "model": "jma_seamless",
-  "n": 5082,
-  "mae": 3.26,
-  "bias": -1.05,
-  "csi": 0.61,
-  "pod": 0.64,
+  "n": 5214,
+  "mae": 3.28,
+  "bias": -1.06,
+  "csi": 0.62,
+  "pod": 0.65,
   "far": 0.07,
   "acc": 0.65
  },
  {
   "model": "icon_seamless",
-  "n": 5082,
-  "mae": 3.38,
-  "bias": 0.14,
+  "n": 5214,
+  "mae": 3.44,
+  "bias": 0.21,
   "csi": 0.68,
   "pod": 0.72,
-  "far": 0.08,
-  "acc": 0.7
+  "far": 0.07,
+  "acc": 0.71
  },
  {
   "model": "ukmo_seamless",
-  "n": 4950,
-  "mae": 3.42,
-  "bias": -2.69,
-  "csi": 0.32,
-  "pod": 0.32,
+  "n": 5082,
+  "mae": 3.44,
+  "bias": -2.7,
+  "csi": 0.33,
+  "pod": 0.33,
   "far": 0.02,
   "acc": 0.4
  },
  {
   "model": "meteofrance_seamless",
-  "n": 2508,
-  "mae": 3.48,
+  "n": 2574,
+  "mae": 3.51,
   "bias": -0.62,
-  "csi": 0.53,
-  "pod": 0.54,
+  "csi": 0.54,
+  "pod": 0.55,
   "far": 0.03,
-  "acc": 0.59
+  "acc": 0.6
  },
  {
   "model": "gem_seamless",
-  "n": 5082,
-  "mae": 4.5,
-  "bias": 0.9,
+  "n": 5214,
+  "mae": 4.51,
+  "bias": 0.88,
   "csi": 0.66,
   "pod": 0.7,
   "far": 0.08,
-  "acc": 0.68
+  "acc": 0.69
  }
 ]
