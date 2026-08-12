@@ -1,8 +1,8 @@
 {
   "updated": "2026-08-12",
   "counts": {
-    "go": 0,
-    "watch": 22,
+    "go": 1,
+    "watch": 21,
     "hold": 0
   },
   "districts": [
@@ -110,7 +110,7 @@
     },
     {
       "name": "Kaberamaido",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 22.7,
       "plant_by": "2026-10-01"
     },
