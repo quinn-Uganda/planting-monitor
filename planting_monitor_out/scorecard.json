@@ -1,9 +1,9 @@
 [
  {
   "model": "ecmwf_aifs025_single",
-  "n": 5742,
+  "n": 5874,
   "mae": 2.14,
-  "bias": -0.99,
+  "bias": -1.02,
   "csi": 0.83,
   "pod": 0.88,
   "far": 0.06,
@@ -11,19 +11,19 @@
  },
  {
   "model": "ecmwf_ifs025",
-  "n": 5742,
-  "mae": 2.86,
-  "bias": -0.58,
+  "n": 5874,
+  "mae": 2.85,
+  "bias": -0.6,
   "csi": 0.73,
   "pod": 0.76,
-  "far": 0.06,
+  "far": 0.05,
   "acc": 0.75
  },
  {
   "model": "knmi_seamless",
-  "n": 5742,
-  "mae": 2.88,
-  "bias": -0.76,
+  "n": 5874,
+  "mae": 2.87,
+  "bias": -0.78,
   "csi": 0.7,
   "pod": 0.73,
   "far": 0.05,
@@ -31,62 +31,62 @@
  },
  {
   "model": "gfs_seamless",
-  "n": 5742,
+  "n": 5874,
   "mae": 3.1,
-  "bias": -0.92,
-  "csi": 0.66,
+  "bias": -0.93,
+  "csi": 0.65,
   "pod": 0.68,
   "far": 0.05,
   "acc": 0.68
  },
  {
   "model": "jma_seamless",
-  "n": 5742,
-  "mae": 3.35,
-  "bias": -1.11,
-  "csi": 0.63,
-  "pod": 0.66,
+  "n": 5874,
+  "mae": 3.36,
+  "bias": -1.16,
+  "csi": 0.62,
+  "pod": 0.65,
   "far": 0.06,
-  "acc": 0.66
- },
- {
-  "model": "icon_seamless",
-  "n": 5742,
-  "mae": 3.54,
-  "bias": -0.06,
-  "csi": 0.67,
-  "pod": 0.7,
-  "far": 0.07,
-  "acc": 0.69
+  "acc": 0.65
  },
  {
   "model": "ukmo_seamless",
-  "n": 5610,
-  "mae": 3.54,
-  "bias": -2.85,
-  "csi": 0.33,
-  "pod": 0.33,
+  "n": 5742,
+  "mae": 3.55,
+  "bias": -2.88,
+  "csi": 0.32,
+  "pod": 0.32,
   "far": 0.02,
-  "acc": 0.4
+  "acc": 0.39
  },
  {
   "model": "meteofrance_seamless",
-  "n": 2838,
+  "n": 2904,
   "mae": 3.55,
-  "bias": -0.79,
-  "csi": 0.54,
+  "bias": -0.84,
+  "csi": 0.53,
   "pod": 0.54,
   "far": 0.02,
-  "acc": 0.59
+  "acc": 0.58
  },
  {
-  "model": "gem_seamless",
-  "n": 5742,
-  "mae": 4.59,
-  "bias": 0.67,
-  "csi": 0.65,
+  "model": "icon_seamless",
+  "n": 5874,
+  "mae": 3.56,
+  "bias": -0.12,
+  "csi": 0.66,
   "pod": 0.69,
   "far": 0.07,
   "acc": 0.68
+ },
+ {
+  "model": "gem_seamless",
+  "n": 5874,
+  "mae": 4.56,
+  "bias": 0.59,
+  "csi": 0.65,
+  "pod": 0.68,
+  "far": 0.07,
+  "acc": 0.67
  }
 ]
