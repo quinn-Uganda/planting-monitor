@@ -1,19 +1,19 @@
 [
  {
   "model": "ecmwf_aifs025_single",
-  "n": 5874,
-  "mae": 2.14,
-  "bias": -1.02,
-  "csi": 0.83,
+  "n": 6006,
+  "mae": 2.13,
+  "bias": -0.99,
+  "csi": 0.84,
   "pod": 0.88,
   "far": 0.06,
-  "acc": 0.84
+  "acc": 0.85
  },
  {
   "model": "ecmwf_ifs025",
-  "n": 5874,
-  "mae": 2.85,
-  "bias": -0.6,
+  "n": 6006,
+  "mae": 2.86,
+  "bias": -0.61,
   "csi": 0.73,
   "pod": 0.76,
   "far": 0.05,
@@ -21,19 +21,19 @@
  },
  {
   "model": "knmi_seamless",
-  "n": 5874,
-  "mae": 2.87,
-  "bias": -0.78,
+  "n": 6006,
+  "mae": 2.88,
+  "bias": -0.8,
   "csi": 0.7,
   "pod": 0.73,
   "far": 0.05,
-  "acc": 0.73
+  "acc": 0.72
  },
  {
   "model": "gfs_seamless",
-  "n": 5874,
-  "mae": 3.1,
-  "bias": -0.93,
+  "n": 6006,
+  "mae": 3.09,
+  "bias": -0.96,
   "csi": 0.65,
   "pod": 0.68,
   "far": 0.05,
@@ -41,50 +41,50 @@
  },
  {
   "model": "jma_seamless",
-  "n": 5874,
-  "mae": 3.36,
-  "bias": -1.16,
+  "n": 6006,
+  "mae": 3.35,
+  "bias": -1.19,
   "csi": 0.62,
   "pod": 0.65,
   "far": 0.06,
   "acc": 0.65
  },
  {
+  "model": "icon_seamless",
+  "n": 6006,
+  "mae": 3.56,
+  "bias": -0.16,
+  "csi": 0.65,
+  "pod": 0.68,
+  "far": 0.07,
+  "acc": 0.67
+ },
+ {
   "model": "ukmo_seamless",
-  "n": 5742,
-  "mae": 3.55,
-  "bias": -2.88,
-  "csi": 0.32,
+  "n": 5874,
+  "mae": 3.56,
+  "bias": -2.9,
+  "csi": 0.31,
   "pod": 0.32,
   "far": 0.02,
-  "acc": 0.39
+  "acc": 0.38
  },
  {
   "model": "meteofrance_seamless",
-  "n": 2904,
-  "mae": 3.55,
-  "bias": -0.84,
-  "csi": 0.53,
-  "pod": 0.54,
-  "far": 0.02,
-  "acc": 0.58
- },
- {
-  "model": "icon_seamless",
-  "n": 5874,
+  "n": 2970,
   "mae": 3.56,
-  "bias": -0.12,
-  "csi": 0.66,
-  "pod": 0.69,
-  "far": 0.07,
-  "acc": 0.68
+  "bias": -0.9,
+  "csi": 0.52,
+  "pod": 0.53,
+  "far": 0.02,
+  "acc": 0.57
  },
  {
   "model": "gem_seamless",
-  "n": 5874,
-  "mae": 4.56,
-  "bias": 0.59,
-  "csi": 0.65,
+  "n": 6006,
+  "mae": 4.54,
+  "bias": 0.53,
+  "csi": 0.64,
   "pod": 0.68,
   "far": 0.07,
   "acc": 0.67
