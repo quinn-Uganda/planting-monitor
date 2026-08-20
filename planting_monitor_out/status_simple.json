@@ -1,8 +1,8 @@
 {
   "updated": "2026-08-20",
   "counts": {
-    "go": 21,
-    "watch": 1,
+    "go": 20,
+    "watch": 2,
     "hold": 0
   },
   "districts": [
@@ -134,7 +134,7 @@
     },
     {
       "name": "Kyenjojo",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 21.2,
       "plant_by": "2026-10-15"
     }
