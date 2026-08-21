@@ -1,141 +1,141 @@
 {
-  "updated": "2026-08-20",
+  "updated": "2026-08-21",
   "counts": {
-    "go": 16,
-    "watch": 6,
+    "go": 6,
+    "watch": 16,
     "hold": 0
   },
   "districts": [
     {
       "name": "Agago",
       "status": "WATCH",
-      "mm": 14.6,
+      "mm": 14.9,
       "plant_by": "2026-09-24"
     },
     {
       "name": "Otuke",
       "status": "WATCH",
-      "mm": 22.3,
+      "mm": 21.0,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Kitgum",
       "status": "WATCH",
-      "mm": 21.3,
+      "mm": 12.7,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Pader",
       "status": "GO",
-      "mm": 25.0,
+      "mm": 20.8,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Alebtong",
       "status": "WATCH",
-      "mm": 29.5,
+      "mm": 27.8,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Lira",
-      "status": "GO",
-      "mm": 39.0,
+      "status": "WATCH",
+      "mm": 30.3,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Kole",
-      "status": "GO",
-      "mm": 39.3,
+      "status": "WATCH",
+      "mm": 26.7,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Oyam",
       "status": "GO",
-      "mm": 36.3,
+      "mm": 23.0,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Apac",
-      "status": "GO",
-      "mm": 26.8,
+      "status": "WATCH",
+      "mm": 13.3,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Gulu",
       "status": "GO",
-      "mm": 36.1,
+      "mm": 21.7,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Omoro",
       "status": "GO",
-      "mm": 35.8,
+      "mm": 21.7,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Nwoya",
-      "status": "GO",
-      "mm": 38.1,
+      "status": "WATCH",
+      "mm": 17.4,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Amuru",
-      "status": "GO",
-      "mm": 35.6,
+      "status": "WATCH",
+      "mm": 17.9,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Lamwo",
-      "status": "GO",
-      "mm": 20.2,
+      "status": "WATCH",
+      "mm": 13.0,
       "plant_by": "2026-10-15"
     },
     {
       "name": "Amolatar",
-      "status": "GO",
-      "mm": 27.5,
+      "status": "WATCH",
+      "mm": 13.4,
       "plant_by": "2026-10-01"
     },
     {
       "name": "Kalaki",
-      "status": "GO",
-      "mm": 37.1,
+      "status": "WATCH",
+      "mm": 21.2,
       "plant_by": "2026-09-24"
     },
     {
       "name": "Amuria",
-      "status": "GO",
-      "mm": 37.0,
+      "status": "WATCH",
+      "mm": 18.8,
       "plant_by": "2026-09-24"
     },
     {
       "name": "Kaberamaido",
-      "status": "GO",
-      "mm": 33.4,
+      "status": "WATCH",
+      "mm": 17.1,
       "plant_by": "2026-10-01"
     },
     {
       "name": "Kagadi",
       "status": "WATCH",
-      "mm": 12.6,
+      "mm": 9.1,
       "plant_by": "2026-10-22"
     },
     {
       "name": "Dokolo",
       "status": "GO",
-      "mm": 35.1,
+      "mm": 23.2,
       "plant_by": "2026-10-01"
     },
     {
       "name": "Kwania",
       "status": "GO",
-      "mm": 31.4,
+      "mm": 22.0,
       "plant_by": "2026-10-01"
     },
     {
       "name": "Kyenjojo",
       "status": "WATCH",
-      "mm": 18.0,
+      "mm": 10.4,
       "plant_by": "2026-10-15"
     }
   ]
