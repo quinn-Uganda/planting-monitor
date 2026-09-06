@@ -1,8 +1,8 @@
 {
   "updated": "2026-09-06",
   "counts": {
-    "go": 11,
-    "watch": 11,
+    "go": 14,
+    "watch": 8,
     "hold": 0
   },
   "districts": [
@@ -32,7 +32,7 @@
     },
     {
       "name": "Alebtong",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 20.7,
       "plant_by": "2026-10-15"
     },
@@ -62,7 +62,7 @@
     },
     {
       "name": "Gulu",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 28.1,
       "plant_by": "2026-10-15"
     },
@@ -80,7 +80,7 @@
     },
     {
       "name": "Amuru",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 29.2,
       "plant_by": "2026-10-15"
     },
