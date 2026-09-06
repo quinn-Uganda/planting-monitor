@@ -1,23 +1,23 @@
 date,district,status,confidence,models_agree,reason,rains_active,sat_obs_last10_mm,fc_next7_mm,fc_week2_mm,fc_spread_mm,sample_points,fc_rain_prob_7d_%,fc_dryspell_days,ens_dryspell_prob,clim_risk_thisweek_%,plant_by,lat,lon
-2026-09-06,Agago,AMBER,HIGH,1/4 models wet,"marginal (11.4mm/7d, clim risk 0%)",no,8.2,11.4,31.7,16.1,4,40,3,0.12,0,24 Sep,2.865,33.302
-2026-09-06,Otuke,AMBER,HIGH,1/4 models wet,"marginal (14.6mm/7d, clim risk 0%)",no,9.9,14.6,40.0,12.5,4,46,4,0.07,0,15 Oct,2.504,33.335
-2026-09-06,Kitgum,AMBER,LOW,1/4 models wet,"marginal (18.4mm/7d, clim risk 0%) · rain varies ~25.9mm across the district — check local sites",no,7.1,18.4,38.3,25.9,4,45,2,0.12,0,15 Oct,3.294,33.086
-2026-09-06,Pader,AMBER,LOW,1/4 models wet,models split on the forecast (1/4 models wet); treat as watch,no,8.2,24.0,43.4,13.2,4,43,2,0.05,0,15 Oct,2.891,32.932
-2026-09-06,Alebtong,GREEN,MED,2/4 models wet,"20.7mm forecast next 7d, no dry spell, low seasonal risk",no,9.9,20.7,39.4,15.5,4,46,4,0.03,0,15 Oct,2.327,33.141
-2026-09-06,Lira,GREEN,MED,2/4 models wet,"29.0mm forecast next 7d, no dry spell, low seasonal risk",no,9.9,29.0,35.7,10.3,4,57,4,0.0,0,15 Oct,2.419,32.882
-2026-09-06,Kole,GREEN,MED,2/4 models wet,"29.0mm forecast next 7d, no dry spell, low seasonal risk",no,10.8,29.0,33.2,6.8,4,57,4,0.03,0,15 Oct,2.358,32.705
-2026-09-06,Oyam,GREEN,MED,2/4 models wet,"35.8mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~21.4mm across the district — check local sites",no,10.8,35.8,39.2,21.4,4,65,2,0.03,0,15 Oct,2.439,32.501
-2026-09-06,Apac,GREEN,MED,2/4 models wet,"31.2mm forecast next 7d, no dry spell, low seasonal risk",no,14.0,31.2,33.4,16.4,4,53,2,0.0,0,15 Oct,2.127,32.574
-2026-09-06,Gulu,GREEN,MED,2/4 models wet,"28.1mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~20.8mm across the district — check local sites",no,10.6,28.1,48.2,20.8,4,58,2,0.0,0,15 Oct,2.91,32.378
-2026-09-06,Omoro,GREEN,MED,2/4 models wet,"24.6mm forecast next 7d, no dry spell, low seasonal risk",no,10.8,24.6,45.9,15.1,4,57,2,0.03,0,15 Oct,2.676,32.637
-2026-09-06,Nwoya,GREEN,MED,2/4 models wet,"37.6mm forecast next 7d, no dry spell, low seasonal risk",no,12.2,37.6,44.3,17.3,4,59,1,0.0,0,15 Oct,2.635,31.989
-2026-09-06,Amuru,GREEN,MED,2/4 models wet,"29.2mm forecast next 7d, no dry spell, low seasonal risk",no,12.1,29.2,47.5,3.0,4,58,2,0.0,0,15 Oct,2.989,32.016
-2026-09-06,Lamwo,AMBER,LOW,1/4 models wet,"marginal (17.6mm/7d, clim risk 0%) · rain varies ~26.6mm across the district — check local sites",no,13.6,17.6,33.1,26.6,4,47,3,0.2,0,15 Oct,3.501,32.736
-2026-09-06,Amolatar,GREEN,MED,2/4 models wet,"28.9mm forecast next 7d, no dry spell, low seasonal risk",yes,21.0,28.9,34.4,8.2,4,54,1,0.0,6,01 Oct,1.702,32.816
-2026-09-06,Kalaki,GREEN,MED,2/4 models wet,"22.6mm forecast next 7d, no dry spell, low seasonal risk",no,14.8,22.6,28.0,8.8,4,45,3,0.03,11,24 Sep,1.896,33.4
-2026-09-06,Amuria,AMBER,MED,2/4 models wet,"marginal (18.3mm/7d, clim risk 11%)",no,14.8,18.3,24.2,0.0,4,46,4,0.03,11,24 Sep,2.038,33.398
-2026-09-06,Kaberamaido,GREEN,MED,2/4 models wet,"26.8mm forecast next 7d, no dry spell, low seasonal risk",yes,21.0,26.8,31.6,0.1,4,54,2,0.0,0,01 Oct,1.747,33.13
-2026-09-06,Kagadi,AMBER,LOW,1/4 models wet,"thin rain ahead (23.6mm/7d, ens dry-risk 55%)",no,17.9,23.6,42.5,8.2,3,73,3,0.55,0,22 Oct,1.019,30.841
-2026-09-06,Dokolo,GREEN,MED,2/4 models wet,"30.0mm forecast next 7d, no dry spell, low seasonal risk",no,14.8,30.0,34.2,9.6,4,60,1,0.0,0,01 Oct,1.912,33.0
-2026-09-06,Kwania,GREEN,MED,2/4 models wet,"36.5mm forecast next 7d, no dry spell, low seasonal risk",no,14.0,36.5,35.8,0.0,4,60,1,0.0,0,01 Oct,1.974,32.796
-2026-09-06,Kyenjojo,AMBER,LOW,1/4 models wet,"thin rain ahead (21.1mm/7d, ens dry-risk 62%)",no,17.9,21.1,44.0,0.0,3,77,2,0.62,0,15 Oct,0.797,30.691
+2026-09-06,Agago,AMBER,HIGH,1/4 models wet,"marginal (10.0mm/7d, clim risk 0%)",no,8.2,10.0,30.8,16.6,4,40,5,0.12,0,24 Sep,2.865,33.302
+2026-09-06,Otuke,AMBER,HIGH,0/4 models wet,"marginal (13.3mm/7d, clim risk 0%)",no,9.9,13.3,40.0,13.4,4,51,2,0.07,0,15 Oct,2.504,33.335
+2026-09-06,Kitgum,AMBER,HIGH,0/4 models wet,"marginal (13.1mm/7d, clim risk 0%) · rain varies ~25.9mm across the district — check local sites",no,7.1,13.1,36.5,25.9,4,47,5,0.12,0,15 Oct,3.294,33.086
+2026-09-06,Pader,AMBER,HIGH,0/4 models wet,"marginal (11.1mm/7d, clim risk 0%)",no,8.2,11.1,44.9,15.8,4,51,3,0.05,0,15 Oct,2.891,32.932
+2026-09-06,Alebtong,AMBER,HIGH,1/4 models wet,"marginal (12.9mm/7d, clim risk 0%)",no,9.9,12.9,37.2,10.2,4,51,2,0.03,0,15 Oct,2.327,33.141
+2026-09-06,Lira,AMBER,MED,2/4 models wet,"marginal (18.4mm/7d, clim risk 0%)",no,9.9,18.4,33.2,9.2,4,59,2,0.0,0,15 Oct,2.419,32.882
+2026-09-06,Kole,GREEN,MED,2/4 models wet,"20.1mm forecast next 7d, no dry spell, low seasonal risk",no,10.8,20.1,31.9,0.6,4,59,2,0.03,0,15 Oct,2.358,32.705
+2026-09-06,Oyam,GREEN,MED,2/4 models wet,"21.7mm forecast next 7d, no dry spell, low seasonal risk",no,10.8,21.7,37.5,7.5,4,66,3,0.03,0,15 Oct,2.439,32.501
+2026-09-06,Apac,GREEN,MED,2/4 models wet,"22.9mm forecast next 7d, no dry spell, low seasonal risk",no,14.0,22.9,34.2,7.6,4,57,3,0.0,0,15 Oct,2.127,32.574
+2026-09-06,Gulu,AMBER,MED,2/4 models wet,"marginal (17.5mm/7d, clim risk 0%)",no,10.6,17.5,49.1,18.4,4,65,2,0.0,0,15 Oct,2.91,32.378
+2026-09-06,Omoro,AMBER,LOW,1/4 models wet,"marginal (16.4mm/7d, clim risk 0%)",no,10.8,16.4,45.9,13.3,4,64,3,0.03,0,15 Oct,2.676,32.637
+2026-09-06,Nwoya,GREEN,MED,2/4 models wet,"24.2mm forecast next 7d, no dry spell, low seasonal risk",no,12.2,24.2,44.0,16.0,4,63,1,0.0,0,15 Oct,2.635,31.989
+2026-09-06,Amuru,GREEN,MED,2/4 models wet,"24.4mm forecast next 7d, no dry spell, low seasonal risk",no,12.1,24.4,45.8,12.1,4,63,1,0.0,0,15 Oct,2.989,32.016
+2026-09-06,Lamwo,AMBER,HIGH,0/4 models wet,"marginal (8.8mm/7d, clim risk 0%)",no,13.6,8.8,33.6,14.6,4,49,3,0.2,0,15 Oct,3.501,32.736
+2026-09-06,Amolatar,AMBER,HIGH,1/4 models wet,"marginal (11.9mm/7d, clim risk 6%)",yes,21.0,11.9,35.9,11.5,4,54,1,0.0,6,01 Oct,1.702,32.816
+2026-09-06,Kalaki,AMBER,HIGH,1/4 models wet,"marginal (9.2mm/7d, clim risk 11%)",no,14.8,9.2,26.4,3.7,4,49,6,0.03,11,24 Sep,1.896,33.4
+2026-09-06,Amuria,AMBER,HIGH,1/4 models wet,"marginal (8.1mm/7d, clim risk 11%)",no,14.8,8.1,24.0,0.0,4,47,6,0.03,11,24 Sep,2.038,33.398
+2026-09-06,Kaberamaido,AMBER,HIGH,1/4 models wet,"marginal (8.9mm/7d, clim risk 0%)",yes,21.0,8.9,31.9,0.1,4,54,4,0.0,0,01 Oct,1.747,33.13
+2026-09-06,Kagadi,AMBER,LOW,1/4 models wet,"thin rain ahead (17.6mm/7d, ens dry-risk 55%)",no,17.9,17.6,42.5,3.4,3,70,3,0.55,0,22 Oct,1.019,30.841
+2026-09-06,Dokolo,AMBER,HIGH,1/4 models wet,"marginal (12.6mm/7d, clim risk 0%)",no,14.8,12.6,33.4,9.1,4,56,1,0.0,0,01 Oct,1.912,33.0
+2026-09-06,Kwania,AMBER,MED,2/4 models wet,"marginal (18.1mm/7d, clim risk 0%)",no,14.0,18.1,35.8,0.0,4,56,1,0.0,0,01 Oct,1.974,32.796
+2026-09-06,Kyenjojo,AMBER,LOW,1/4 models wet,"thin rain ahead (32.4mm/7d, ens dry-risk 62%)",no,17.9,32.4,44.0,0.0,3,78,2,0.62,0,15 Oct,0.797,30.691
