@@ -1,14 +1,14 @@
 {
   "updated": "2026-09-09",
   "counts": {
-    "go": 21,
-    "watch": 1,
+    "go": 19,
+    "watch": 3,
     "hold": 0
   },
   "districts": [
     {
       "name": "Agago",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 26.3,
       "plant_by": "2026-09-24"
     },
@@ -20,7 +20,7 @@
     },
     {
       "name": "Kitgum",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 28.3,
       "plant_by": "2026-10-15"
     },
@@ -92,7 +92,7 @@
     },
     {
       "name": "Amolatar",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 31.7,
       "plant_by": "2026-10-01"
     },
@@ -134,7 +134,7 @@
     },
     {
       "name": "Kyenjojo",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 31.8,
       "plant_by": "2026-10-15"
     }
