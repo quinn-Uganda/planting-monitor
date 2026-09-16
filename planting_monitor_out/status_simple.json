@@ -1,14 +1,14 @@
 {
   "updated": "2026-09-16",
   "counts": {
-    "go": 21,
-    "watch": 1,
+    "go": 19,
+    "watch": 3,
     "hold": 0
   },
   "districts": [
     {
       "name": "Agago",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 26.5,
       "plant_by": "2026-09-24"
     },
@@ -20,7 +20,7 @@
     },
     {
       "name": "Kitgum",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 22.0,
       "plant_by": "2026-10-15"
     },
