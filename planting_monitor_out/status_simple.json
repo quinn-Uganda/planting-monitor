@@ -8,7 +8,7 @@
   "districts": [
     {
       "name": "Agago",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 34.5,
       "plant_by": "2026-09-24"
     },
@@ -110,7 +110,7 @@
     },
     {
       "name": "Kaberamaido",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 60.2,
       "plant_by": "2026-10-01"
     },
