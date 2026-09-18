@@ -1,14 +1,14 @@
 {
   "updated": "2026-09-18",
   "counts": {
-    "go": 18,
-    "watch": 4,
+    "go": 21,
+    "watch": 1,
     "hold": 0
   },
   "districts": [
     {
       "name": "Agago",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 23.4,
       "plant_by": "2026-09-24"
     },
@@ -26,7 +26,7 @@
     },
     {
       "name": "Pader",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 32.0,
       "plant_by": "2026-10-15"
     },
@@ -86,7 +86,7 @@
     },
     {
       "name": "Lamwo",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 27.6,
       "plant_by": "2026-10-15"
     },
