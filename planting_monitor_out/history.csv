@@ -2261,3 +2261,25 @@ date,district,status,confidence,models_agree,reason,rains_active,sat_obs_last10_
 2026-10-03,Dokolo,AMBER,HIGH,0/4 models wet,"marginal (13.2mm/7d, clim risk 6%)",yes,33.5,13.2,91.8,16.4,4,53,2,0.2,6,01 Oct,1.912,33.0
 2026-10-03,Kwania,AMBER,LOW,1/4 models wet,models split on the forecast (1/4 models wet); treat as watch,yes,36.2,24.1,107.4,0.0,4,53,2,0.12,6,01 Oct,1.974,32.796
 2026-10-03,Kyenjojo,GREEN,HIGH,4/4 models wet,"36.3mm forecast next 7d, no dry spell, low seasonal risk",yes,61.2,36.3,69.2,0.0,3,83,1,0.0,0,15 Oct,0.797,30.691
+2026-10-04,Agago,RED,HIGH,0/4 models wet,past plant-by deadline; too little season left,yes,25.8,9.8,97.1,14.6,4,41,6,0.7,0,24 Sep,2.865,33.302
+2026-10-04,Otuke,AMBER,LOW,0/4 models wet,"thin rain ahead (15.5mm/7d, ens dry-risk 53%)",yes,25.6,15.5,97.5,4.4,4,57,2,0.53,0,15 Oct,2.504,33.335
+2026-10-04,Kitgum,AMBER,HIGH,0/4 models wet,"thin rain ahead (12.1mm/7d, ens dry-risk 68%)",yes,22.4,12.1,113.8,19.8,4,50,2,0.68,0,15 Oct,3.294,33.086
+2026-10-04,Pader,AMBER,LOW,1/4 models wet,"thin rain ahead (17.9mm/7d, ens dry-risk 65%)",yes,25.8,17.9,91.9,15.0,4,55,2,0.65,0,15 Oct,2.891,32.932
+2026-10-04,Alebtong,AMBER,LOW,1/4 models wet,"marginal (17.5mm/7d, clim risk 6%)",yes,25.6,17.5,101.8,4.4,4,57,2,0.2,6,15 Oct,2.327,33.141
+2026-10-04,Lira,AMBER,LOW,1/4 models wet,models split on the forecast (1/4 models wet); treat as watch · rain varies ~24.2mm across the district — check local sites,yes,25.6,21.4,108.8,24.2,4,56,2,0.15,0,15 Oct,2.419,32.882
+2026-10-04,Kole,AMBER,LOW,1/4 models wet,"marginal (19.6mm/7d, clim risk 0%)",yes,27.5,19.6,108.5,16.0,4,56,2,0.12,0,15 Oct,2.358,32.705
+2026-10-04,Oyam,AMBER,LOW,1/4 models wet,models split on the forecast (1/4 models wet); treat as watch · rain varies ~21.3mm across the district — check local sites,yes,27.5,24.4,92.9,21.3,4,55,2,0.05,0,15 Oct,2.439,32.501
+2026-10-04,Apac,GREEN,MED,2/4 models wet,"33.7mm forecast next 7d, no dry spell, low seasonal risk",yes,32.5,33.7,100.3,10.3,4,55,2,0.05,0,15 Oct,2.127,32.574
+2026-10-04,Gulu,AMBER,LOW,1/4 models wet,models split on the forecast (1/4 models wet); treat as watch,yes,28.6,20.4,111.3,8.0,4,56,2,0.38,0,15 Oct,2.91,32.378
+2026-10-04,Omoro,AMBER,LOW,1/4 models wet,"thin rain ahead (23.5mm/7d, ens dry-risk 42%)",yes,27.5,23.5,96.6,4.9,4,55,2,0.42,0,15 Oct,2.676,32.637
+2026-10-04,Nwoya,GREEN,HIGH,3/4 models wet,"22.9mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~20.9mm across the district — check local sites",yes,38.5,22.9,102.5,20.9,4,52,2,0.07,0,15 Oct,2.635,31.989
+2026-10-04,Amuru,AMBER,LOW,0/4 models wet,"marginal (18.9mm/7d, clim risk 0%)",yes,35.6,18.9,112.8,8.9,4,53,2,0.07,0,15 Oct,2.989,32.016
+2026-10-04,Lamwo,AMBER,HIGH,1/4 models wet,"thin rain ahead (10.8mm/7d, ens dry-risk 55%)",yes,36.0,10.8,92.3,5.3,4,56,2,0.55,0,15 Oct,3.501,32.736
+2026-10-04,Amolatar,GREEN,MED,2/4 models wet,"32.3mm forecast next 7d, no dry spell, low seasonal risk",yes,35.3,32.3,98.7,8.4,4,58,2,0.0,6,01 Oct,1.702,32.816
+2026-10-04,Kalaki,RED,LOW,1/4 models wet,past plant-by deadline; too little season left,yes,28.5,18.6,111.1,2.9,4,56,2,0.42,7,24 Sep,1.896,33.4
+2026-10-04,Amuria,RED,LOW,1/4 models wet,past plant-by deadline; too little season left,yes,28.5,17.9,119.2,0.0,4,58,1,0.42,7,24 Sep,2.038,33.398
+2026-10-04,Kaberamaido,AMBER,LOW,1/4 models wet,models split on the forecast (1/4 models wet); treat as watch,yes,35.3,25.5,100.5,9.5,4,58,1,0.03,6,01 Oct,1.747,33.13
+2026-10-04,Kagadi,GREEN,HIGH,4/4 models wet,"49.9mm forecast next 7d, no dry spell, low seasonal risk",yes,59.0,49.9,68.6,2.4,3,72,2,0.0,0,22 Oct,1.019,30.841
+2026-10-04,Dokolo,GREEN,MED,2/4 models wet,"33.0mm forecast next 7d, no dry spell, low seasonal risk",yes,28.5,33.0,99.4,7.9,4,63,2,0.03,6,01 Oct,1.912,33.0
+2026-10-04,Kwania,GREEN,MED,2/4 models wet,"28.6mm forecast next 7d, no dry spell, low seasonal risk",yes,32.5,28.6,96.4,0.0,4,63,2,0.07,6,01 Oct,1.974,32.796
+2026-10-04,Kyenjojo,GREEN,HIGH,4/4 models wet,"39.7mm forecast next 7d, no dry spell, low seasonal risk",yes,59.0,39.7,52.4,0.0,3,80,1,0.0,0,15 Oct,0.797,30.691
