@@ -1,23 +1,23 @@
 date,district,status,confidence,models_agree,reason,rains_active,sat_obs_last10_mm,fc_next7_mm,fc_week2_mm,fc_spread_mm,sample_points,fc_rain_prob_7d_%,fc_dryspell_days,ens_dryspell_prob,clim_risk_thisweek_%,plant_by,lat,lon
-2026-10-13,Agago,RED,MED,2/4 models wet,past plant-by deadline; too little season left,no,10.7,39.2,19.8,15.6,4,76,1,0.05,0,24 Sep,2.865,33.302
-2026-10-13,Otuke,GREEN,MED,2/4 models wet,"44.0mm forecast next 7d, no dry spell, low seasonal risk",no,11.8,44.0,18.5,5.9,4,75,0,0.0,0,15 Oct,2.504,33.335
-2026-10-13,Kitgum,GREEN,HIGH,3/4 models wet,"45.6mm forecast next 7d, no dry spell, low seasonal risk",no,10.2,45.6,23.2,19.9,4,78,1,0.07,0,15 Oct,3.294,33.086
-2026-10-13,Pader,GREEN,HIGH,3/4 models wet,"41.9mm forecast next 7d, no dry spell, low seasonal risk",no,10.7,41.9,19.7,5.7,4,78,2,0.0,0,15 Oct,2.891,32.932
-2026-10-13,Alebtong,GREEN,HIGH,3/4 models wet,"32.9mm forecast next 7d, no dry spell, low seasonal risk",no,11.8,32.9,24.8,15.2,4,75,0,0.0,0,15 Oct,2.327,33.141
-2026-10-13,Lira,GREEN,HIGH,3/4 models wet,"41.4mm forecast next 7d, no dry spell, low seasonal risk",no,11.8,41.4,23.5,13.6,4,73,1,0.0,0,15 Oct,2.419,32.882
-2026-10-13,Kole,GREEN,HIGH,3/4 models wet,"33.8mm forecast next 7d, no dry spell, low seasonal risk",no,17.0,33.8,23.1,15.2,4,73,1,0.0,0,15 Oct,2.358,32.705
-2026-10-13,Oyam,GREEN,HIGH,3/4 models wet,"33.1mm forecast next 7d, no dry spell, low seasonal risk",no,17.0,33.1,29.2,14.4,4,72,2,0.0,0,15 Oct,2.439,32.501
-2026-10-13,Apac,GREEN,HIGH,3/4 models wet,"38.6mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~28.0mm across the district — check local sites",yes,21.0,38.6,27.0,28.0,4,71,0,0.0,0,15 Oct,2.127,32.574
-2026-10-13,Gulu,GREEN,HIGH,3/4 models wet,"45.5mm forecast next 7d, no dry spell, low seasonal risk",no,19.1,45.5,24.2,1.4,4,78,1,0.0,0,15 Oct,2.91,32.378
-2026-10-13,Omoro,GREEN,HIGH,3/4 models wet,"41.9mm forecast next 7d, no dry spell, low seasonal risk",no,17.0,41.9,22.2,10.4,4,75,0,0.03,0,15 Oct,2.676,32.637
-2026-10-13,Nwoya,GREEN,HIGH,3/4 models wet,"49.7mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~30.4mm across the district — check local sites",yes,24.4,49.7,37.7,30.4,4,76,1,0.0,0,15 Oct,2.635,31.989
-2026-10-13,Amuru,GREEN,HIGH,3/4 models wet,"59.3mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~32.3mm across the district — check local sites",yes,26.3,59.3,49.8,32.3,4,87,0,0.0,0,15 Oct,2.989,32.016
-2026-10-13,Lamwo,GREEN,MED,2/4 models wet,"37.6mm forecast next 7d, no dry spell, low seasonal risk",yes,24.3,37.6,24.9,11.6,4,81,1,0.03,0,15 Oct,3.501,32.736
-2026-10-13,Amolatar,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,27.6,39.8,37.2,12.2,4,68,1,0.0,4,01 Oct,1.702,32.816
-2026-10-13,Kalaki,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,no,19.6,33.8,26.1,2.2,4,73,0,0.0,4,24 Sep,1.896,33.4
-2026-10-13,Amuria,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,no,19.6,34.4,23.0,0.0,4,76,1,0.0,4,24 Sep,2.038,33.398
-2026-10-13,Kaberamaido,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,27.6,37.5,35.6,10.6,4,68,2,0.0,2,01 Oct,1.747,33.13
-2026-10-13,Kagadi,GREEN,HIGH,4/4 models wet,"31.0mm forecast next 7d, no dry spell, low seasonal risk",yes,47.1,31.0,43.2,15.5,3,93,0,0.0,0,22 Oct,1.019,30.841
-2026-10-13,Dokolo,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,no,19.6,46.4,29.1,5.6,4,76,0,0.0,4,01 Oct,1.912,33.0
-2026-10-13,Kwania,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,21.0,46.0,26.4,0.0,4,76,0,0.0,4,01 Oct,1.974,32.796
-2026-10-13,Kyenjojo,GREEN,HIGH,4/4 models wet,"33.8mm forecast next 7d, no dry spell, low seasonal risk",yes,47.1,33.8,51.8,0.0,3,95,1,0.0,0,15 Oct,0.797,30.691
+2026-10-14,Agago,RED,MED,2/4 models wet,past plant-by deadline; too little season left · rain varies ~22.0mm across the district — check local sites,yes,21.0,53.9,22.2,22.0,4,75,1,0.07,0,24 Sep,2.865,33.302
+2026-10-14,Otuke,GREEN,HIGH,3/4 models wet,"61.5mm forecast next 7d, no dry spell, low seasonal risk",yes,26.6,61.5,29.4,1.4,4,73,0,0.0,0,15 Oct,2.504,33.335
+2026-10-14,Kitgum,GREEN,MED,2/4 models wet,"50.6mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~25.8mm across the district — check local sites",no,18.2,50.6,30.3,25.8,4,75,1,0.1,0,15 Oct,3.294,33.086
+2026-10-14,Pader,GREEN,HIGH,3/4 models wet,"43.7mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~29.6mm across the district — check local sites",yes,21.0,43.7,30.3,29.6,4,72,1,0.05,0,15 Oct,2.891,32.932
+2026-10-14,Alebtong,GREEN,HIGH,3/4 models wet,"45.3mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~32.3mm across the district — check local sites",yes,26.6,45.3,35.7,32.3,4,73,0,0.0,0,15 Oct,2.327,33.141
+2026-10-14,Lira,GREEN,HIGH,3/4 models wet,"49.0mm forecast next 7d, no dry spell, low seasonal risk",yes,26.6,49.0,38.6,10.4,4,67,0,0.0,0,15 Oct,2.419,32.882
+2026-10-14,Kole,GREEN,HIGH,3/4 models wet,"43.7mm forecast next 7d, no dry spell, low seasonal risk",yes,32.7,43.7,38.6,15.5,4,67,0,0.0,0,15 Oct,2.358,32.705
+2026-10-14,Oyam,GREEN,HIGH,3/4 models wet,"45.0mm forecast next 7d, no dry spell, low seasonal risk",yes,32.7,45.0,46.3,11.7,4,66,1,0.0,0,15 Oct,2.439,32.501
+2026-10-14,Apac,GREEN,HIGH,3/4 models wet,"46.4mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~23.6mm across the district — check local sites",yes,33.9,46.4,39.1,23.6,4,64,0,0.0,0,15 Oct,2.127,32.574
+2026-10-14,Gulu,GREEN,HIGH,3/4 models wet,"50.0mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~22.3mm across the district — check local sites",yes,33.4,50.0,38.8,22.3,4,72,1,0.0,0,15 Oct,2.91,32.378
+2026-10-14,Omoro,GREEN,HIGH,3/4 models wet,"43.9mm forecast next 7d, no dry spell, low seasonal risk",yes,32.7,43.9,36.3,9.6,4,67,1,0.0,0,15 Oct,2.676,32.637
+2026-10-14,Nwoya,GREEN,HIGH,3/4 models wet,"43.6mm forecast next 7d, no dry spell, low seasonal risk",yes,38.7,43.6,52.1,5.0,4,74,2,0.0,0,15 Oct,2.635,31.989
+2026-10-14,Amuru,GREEN,HIGH,3/4 models wet,"52.7mm forecast next 7d, no dry spell, low seasonal risk · rain varies ~27.5mm across the district — check local sites",yes,38.6,52.7,44.2,27.5,4,82,0,0.0,0,15 Oct,2.989,32.016
+2026-10-14,Lamwo,GREEN,HIGH,3/4 models wet,"36.8mm forecast next 7d, no dry spell, low seasonal risk",yes,35.5,36.8,27.4,12.4,4,76,1,0.03,0,15 Oct,3.501,32.736
+2026-10-14,Amolatar,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,58.3,51.5,40.7,8.3,4,67,1,0.0,4,01 Oct,1.702,32.816
+2026-10-14,Kalaki,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,35.1,48.2,34.4,11.9,4,70,1,0.0,4,24 Sep,1.896,33.4
+2026-10-14,Amuria,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,35.1,50.3,31.5,0.0,4,70,1,0.0,4,24 Sep,2.038,33.398
+2026-10-14,Kaberamaido,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,58.3,46.9,40.2,13.4,4,67,0,0.0,2,01 Oct,1.747,33.13
+2026-10-14,Kagadi,GREEN,HIGH,4/4 models wet,"34.4mm forecast next 7d, no dry spell, low seasonal risk",yes,65.3,34.4,41.2,13.7,3,82,0,0.0,0,22 Oct,1.019,30.841
+2026-10-14,Dokolo,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,35.1,54.1,44.2,5.0,4,75,0,0.0,4,01 Oct,1.912,33.0
+2026-10-14,Kwania,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,33.9,57.6,54.2,0.0,4,75,0,0.0,4,01 Oct,1.974,32.796
+2026-10-14,Kyenjojo,GREEN,HIGH,4/4 models wet,"43.8mm forecast next 7d, no dry spell, low seasonal risk",yes,65.3,43.8,48.5,0.0,3,90,0,0.0,0,15 Oct,0.797,30.691
