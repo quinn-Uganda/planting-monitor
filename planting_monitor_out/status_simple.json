@@ -1,8 +1,8 @@
 {
   "updated": "2026-10-14",
   "counts": {
-    "go": 14,
-    "watch": 1,
+    "go": 13,
+    "watch": 2,
     "hold": 7
   },
   "districts": [
@@ -26,7 +26,7 @@
     },
     {
       "name": "Pader",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 34.8,
       "plant_by": "2026-10-15"
     },
