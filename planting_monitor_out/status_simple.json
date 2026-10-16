@@ -20,7 +20,7 @@
     },
     {
       "name": "Kitgum",
-      "status": "WATCH",
+      "status": "GO",
       "mm": 45.5,
       "plant_by": "2026-10-15"
     },
@@ -86,7 +86,7 @@
     },
     {
       "name": "Lamwo",
-      "status": "GO",
+      "status": "WATCH",
       "mm": 27.9,
       "plant_by": "2026-10-15"
     },
