@@ -2745,3 +2745,25 @@ date,district,status,confidence,models_agree,reason,rains_active,sat_obs_last10_
 2026-10-25,Dokolo,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,1340.4,44.2,17.1,19.3,4,70,3,0.0,0,01 Oct,1.912,33.0
 2026-10-25,Kwania,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1828.1,58.6,15.4,0.0,4,70,3,0.0,2,01 Oct,1.974,32.796
 2026-10-25,Kyenjojo,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1860.0,35.7,14.4,0.0,3,84,2,0.0,0,15 Oct,0.797,30.691
+2026-10-26,Agago,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left · rain varies ~27.2mm across the district — check local sites,yes,972.2,34.3,14.6,27.2,4,56,6,0.12,0,24 Sep,2.865,33.302
+2026-10-26,Otuke,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,1008.2,43.0,18.2,4.4,4,60,4,0.03,0,15 Oct,2.504,33.335
+2026-10-26,Kitgum,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,843.8,34.5,14.1,17.3,4,63,6,0.03,0,15 Oct,3.294,33.086
+2026-10-26,Pader,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,972.2,32.4,13.9,17.4,4,63,4,0.05,0,15 Oct,2.891,32.932
+2026-10-26,Alebtong,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,1008.2,39.6,18.5,10.9,4,60,4,0.0,0,15 Oct,2.327,33.141
+2026-10-26,Lira,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1008.2,42.5,17.3,4.8,4,62,4,0.0,0,15 Oct,2.419,32.882
+2026-10-26,Kole,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1337.0,46.6,19.1,15.8,4,62,4,0.03,0,15 Oct,2.358,32.705
+2026-10-26,Oyam,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,1337.0,44.6,24.9,15.8,4,63,3,0.0,0,15 Oct,2.439,32.501
+2026-10-26,Apac,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left · rain varies ~28.4mm across the district — check local sites,yes,1828.1,32.3,22.6,28.4,4,62,6,0.0,3,15 Oct,2.127,32.574
+2026-10-26,Gulu,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1198.8,38.5,20.3,15.1,4,66,3,0.0,0,15 Oct,2.91,32.378
+2026-10-26,Omoro,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1337.0,37.6,17.9,15.0,4,64,3,0.0,0,15 Oct,2.676,32.637
+2026-10-26,Nwoya,RED,HIGH,3/4 models wet,past plant-by deadline; too little season left,yes,1774.3,44.9,31.4,19.4,4,65,2,0.0,0,15 Oct,2.635,31.989
+2026-10-26,Amuru,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1677.4,36.1,30.1,17.7,4,68,4,0.0,0,15 Oct,2.989,32.016
+2026-10-26,Lamwo,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1423.4,28.3,12.7,12.3,4,70,6,0.03,0,15 Oct,3.501,32.736
+2026-10-26,Amolatar,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,2320.1,36.1,25.8,19.2,4,66,2,0.0,6,01 Oct,1.702,32.816
+2026-10-26,Kalaki,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1340.4,42.9,19.9,10.2,4,65,2,0.0,11,24 Sep,1.896,33.4
+2026-10-26,Amuria,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1340.4,47.5,21.2,0.0,4,67,2,0.0,11,24 Sep,2.038,33.398
+2026-10-26,Kaberamaido,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,2320.1,39.1,21.9,3.6,4,66,2,0.0,0,01 Oct,1.747,33.13
+2026-10-26,Kagadi,GREEN,HIGH,4/4 models wet,"29.0mm forecast next 7d, no dry spell, low seasonal risk",yes,1860.0,29.0,34.3,3.9,3,76,1,0.0,0,22 Oct,1.019,30.841
+2026-10-26,Dokolo,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1340.4,42.4,22.8,6.3,4,66,2,0.0,0,01 Oct,1.912,33.0
+2026-10-26,Kwania,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1828.1,38.7,23.6,0.0,4,66,2,0.0,2,01 Oct,1.974,32.796
+2026-10-26,Kyenjojo,RED,HIGH,4/4 models wet,past plant-by deadline; too little season left,yes,1860.0,28.5,24.0,0.0,3,80,2,0.0,0,15 Oct,0.797,30.691
